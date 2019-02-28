@@ -1,12 +1,12 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import RNPickerDialog from "../../component/RNPickerDialog/RNPickerDialog";
+import RNPickerDialog from "../../component/RNModalPicker/RNModalPicker";
 
 export default class HomeScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currencyData: [
+      dataSource: [
         {
           id: 1,
           name: "Afghanistan"
@@ -102,7 +102,6 @@ export default class HomeScreen extends React.Component {
       selectedFlag: false,
       defaultValue: true,
       select: "",
-      dataSource: this.props.dataSource
     };
   }
   _selectedValue(index, name) {
@@ -114,12 +113,12 @@ export default class HomeScreen extends React.Component {
       <View style={Styles.container}>
         <Text style={{marginBottom:50,fontSize:25,fontWeight:'bold'}}>{"React Native Picker With Search"}</Text>
         <RNPickerDialog
-          dataSource={this.state.currencyData}
-          dummyDataSource={this.state.currencyData}
+          dataSource={this.state.dataSource}
+          dummyDataSource={this.state.dataSource}
           defaultValue={false}
           pickerTitle={"Sort by"}
-          hideSearchBar={false}
-          hidePickerTitle={true}
+          showSearchBar={true}
+          showPickerTitle={true}
           pickerStyle={Styles.pickerStyle}
           selectedLabel={this.state.selectedText}
           placeHolderLabel={this.state.placeHolderText}

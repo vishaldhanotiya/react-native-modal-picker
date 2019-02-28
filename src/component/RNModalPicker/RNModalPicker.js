@@ -15,7 +15,7 @@ import {
 } from "react-native";
 
 var i = 0;
-export default class RNPickerDialog extends PureComponent {
+export default class RNModalPicker extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -118,7 +118,7 @@ export default class RNPickerDialog extends PureComponent {
               activeOpacity={0.7}
             >
               <View>
-                {RNPickerDialog._setSelectedValue(
+                {RNModalPicker._setSelectedValue(
                   this.props.selectedLabel,
                   this.props.pickerStyle,
                   this.props.selectLabelTextStyle,
@@ -136,7 +136,7 @@ export default class RNPickerDialog extends PureComponent {
               activeOpacity={0.7}
             >
               <View>
-                {RNPickerDialog._setDefaultValue(
+                {RNModalPicker._setDefaultValue(
                   this.props.placeHolderLabel,
                   this.props.pickerStyle,
                   this.props.placeHolderTextStyle,
@@ -157,12 +157,12 @@ export default class RNPickerDialog extends PureComponent {
           <View style={styles.container}>
             <View style={styles.listDataContainerStyle}>
               <View style={styles.pickerTitleContainerStyle}>
-                {this.props.hidePickerTitle ? null : (
+                {this.props.showPickerTitle ? (
                   <Text style={styles.pickerTitleTextStyle}>
                     {" "}
                     {this.props.pickerTitle}
                   </Text>
-                )}
+                ) : null }
              
 
               <TouchableOpacity
@@ -176,7 +176,7 @@ export default class RNPickerDialog extends PureComponent {
                 />
               </TouchableOpacity>
               </View>
-              {this.props.hideSearchBar ? null : (
+              {this.props.showSearchBar ? (
                 <View style={styles.searchBarContainerStyle}>
                   {/* <Image
                           resizeMode="contain"
@@ -200,7 +200,7 @@ export default class RNPickerDialog extends PureComponent {
                     blurOnSubmit={true}
                   />
                 </View>
-              )}
+              ) : null}
 
               <FlatList
                 style={styles.flatListStyle}
@@ -222,11 +222,57 @@ export default class RNPickerDialog extends PureComponent {
     );
   }
 }
-RNPickerDialog.defaultProps = {
-  hideSearchBar: false,
-  hidePickerTitle: false
+RNModalPicker.defaultProps = {
+  defaultValue:false,
+  showSearchBar: false,
+  showPickerTitle: false,
+
+
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  selectLabelTextStyle: {
+    color: "#000",
+    textAlign: "left",
+    width: "99%",
+    padding: 10,
+    flexDirection: "row"
+  },
+  placeHolderTextStyle: {
+    color: "#D3D3D3",
+    padding: 10,
+    textAlign: "left",
+    width: "99%",
+    flexDirection: "row"
+  },
+  dropDownImageStyle: {
+    marginLeft: 10,
+    width: 10,
+    height: 10,
+    alignSelf: "center"
+  },
+  pickerStyle: {
+    marginLeft: 18,
+    paddingRight: 25,
+    marginRight:10,
+    marginBottom:2,
+    shadowRadius: 1,
+    shadowOpacity: 1.0,
+    shadowOffset: {
+      width: 1,
+      height: 1
+    },
+    borderColor: "#303030",
+    shadowColor: "#303030",
+    borderRadius: 5,
+    elevation: 1,
+    flexDirection: "row",
+  }
+
 };
-RNPickerDialog.propTypes = {
+RNModalPicker.propTypes = {
   placeHolderLabel: PropTypes.any,
   selectedLabel: PropTypes.any,
   pickerTitle: PropTypes.any,
@@ -235,8 +281,8 @@ RNPickerDialog.propTypes = {
   dropDownImage: PropTypes.number,
   defaultSelected: PropTypes.any,
   defaultValue: PropTypes.bool,
-  hideSearchBar: PropTypes.bool,
-  hidePickerTitle: PropTypes.bool,
+  showSearchBar: PropTypes.bool,
+  showPickerTitle: PropTypes.bool,
 
   dropDownImageStyle: PropTypes.oneOfType([
     PropTypes.number,
@@ -266,6 +312,7 @@ RNPickerDialog.propTypes = {
   ])
 };
 const styles = StyleSheet.create({
+  
   mainContainer: {
     flexDirection: "row",
     justifyContent: "center",
