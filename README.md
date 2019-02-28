@@ -1,4 +1,4 @@
-# react-native-modal-picker
+# rn-modal-picker
 
 This is a cross-platform picker with search bar for react native support both platform IOs and android
 
@@ -19,11 +19,11 @@ This is a cross-platform picker with search bar for react native support both pl
 
 #### Step 1 Install
 
-> **npm install react-native-modal-picker**
+> **npm install npm i rn-modal-picker**
 
 #### Step 2 Link
 
-> **react-native link react-native-modal-picker**
+> **react-native link rn-modal-picker**
 
 
 
