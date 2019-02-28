@@ -19,7 +19,7 @@ This is a cross-platform picker with search bar for react native support both pl
 
 #### Step 1 Install
 
-> **npm install npm i rn-modal-picker**
+> **npm i rn-modal-picker**
 
 #### Step 2 Link
 
