@@ -226,8 +226,8 @@ RNModalPicker.defaultProps = {
   defaultValue:false,
   showSearchBar: false,
   showPickerTitle: false,
-
-
+  dropDownImage:require("../../../res/ic_drop_down.png"),
+  placeHolderLabel:'Please select value from picker',
   container: {
     flex: 1,
     alignItems: "center",

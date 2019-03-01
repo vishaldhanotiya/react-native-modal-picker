@@ -125,7 +125,7 @@ export default class HomeScreen extends React.Component {
           selectLabelTextStyle={Styles.selectLabelTextStyle}
           placeHolderTextStyle={Styles.placeHolderTextStyle}
           dropDownImageStyle={Styles.dropDownImageStyle}
-          
+      
           dropDownImage={require("../../../res/ic_drop_down.png")}
           selectedValue={(index, name) => this._selectedValue(index, name)}
         />
