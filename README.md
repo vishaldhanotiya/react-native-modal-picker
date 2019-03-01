@@ -27,21 +27,23 @@ This is a cross-platform picker with search bar for react native support both pl
 
 ## Properties
 
-|   Prop                   |  Default  |    Type    |                 Description                         |
-|--------------------------|-----------|------------|-----------------------------------------------------|
-|  dataSource              |  []       |   array    |  Array of objects with a unique id and name         |
-|  dummyDataSource         |  []       |   array    |  Search data by name required for data filteration  | 
-|  defaultValue            |  false    |   bool     |  Use to show predefined value in to picker          |
-|  pickerTitle             |  -        |   string   |  Use to show title on picker                        |
-|  showSearchBar           |  false    |   bool     |  Show and hide search bar                           |
-|  showPickerTitle         |  false    |   bool     |  Show and hide picker title                         |
-|  selectedLabel           |  -        |   string   |  Set selected value otherwise its blank             |
-|  placeHolderText         |  -        |   string   |  Use to Show place holder hint text                 | 
-|  placeHolderTextStyle    |  -        |   object   |  Customize placeholder text style                   |
-|  selectedLabelTextStyle  |  -        |   object   |  Customize selected label text style                |
-|  dropDownImageStyle      |  -        |   object   |  Customize drop down style                          |
-|  dropDownImage           |  -        |   png/jpg  |  Add custom drop down image                         |          
-
+|--------------------------------------------------------------------------------------------------------------------------------|
+|   Prop                   |  Default  |    Type    |                 Description                           | Required/Optional  |
+|--------------------------|-----------|------------|-------------------------------------------------------|--------------------| 
+|  dataSource              |  []       |   array    |  Array of objects with a unique id and name           |   Required         |
+|  dummyDataSource         |  []       |   array    |  Search data by name required for data filteration    |   Required         |
+|  defaultValue            |  false    |   bool     |  Use to show predefined value in to picker            |   Optional         |
+|  pickerTitle             |  -        |   string   |  Use to show title on picker                          |   Optional         |
+|  showSearchBar           |  false    |   bool     |  Show and hide search bar                             |   Optional         |
+|  showPickerTitle         |  false    |   bool     |  Show and hide picker title                           |   Optional         |
+|  selectedLabel           |  -        |   string   |  Set selected value otherwise its blank               |   Optional         |
+|  placeHolderText         |  -        |   string   |  Use to Show place holder hint text                   |   Required         |
+|  placeHolderTextStyle    |  -        |   object   |  Customize placeholder text style                     |   Optional         |
+|  selectedLabelTextStyle  |  -        |   object   |  Customize selected label text style                  |   Optional         |
+|  dropDownImageStyle      |  -        |   object   |  Customize drop down style                            |   Optional         |
+|  dropDownImage           |  -        |   png/jpg  |  Add custom drop down image                           |   Optional         |
+|  selectedValue           |  -        |   function |  callback function received value from list selection |   Required         | 
+|--------------------------------------------------------------------------------------------------------------------------------|
 
 
 
