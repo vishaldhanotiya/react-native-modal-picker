@@ -27,7 +27,7 @@ This is a cross-platform picker with search bar for react native support both pl
 
 ## Properties
 
-|--------------------------------------------------------------------------------------------------------------------------------|
+
 |   Prop                   |  Default  |    Type    |                 Description                           | Required/Optional  |
 |--------------------------|-----------|------------|-------------------------------------------------------|--------------------| 
 |  dataSource              |  []       |   array    |  Array of objects with a unique id and name           |   Required         |
@@ -43,7 +43,6 @@ This is a cross-platform picker with search bar for react native support both pl
 |  dropDownImageStyle      |  -        |   object   |  Customize drop down style                            |   Optional         |
 |  dropDownImage           |  -        |   png/jpg  |  Add custom drop down image                           |   Optional         |
 |  selectedValue           |  -        |   function |  callback function received value from list selection |   Required         | 
-|--------------------------------------------------------------------------------------------------------------------------------|
 
 
 
