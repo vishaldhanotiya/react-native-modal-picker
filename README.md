@@ -15,7 +15,7 @@ This is a cross-platform picker with search bar for react native support both pl
 4. Dynamically change dropdown image
 5. Customize font size, font color and style 
 
-##Installation
+## Installation
 
 #### Step 1 Install
 
