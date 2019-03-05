@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import HomeScreen from './src/container/HomeScreen/HomeScreen';
 import RNPickerDialog from './src/component/RNModalPicker/RNModalPicker';
-export default class App extends React.Component {
+ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -178,3 +178,4 @@ const Styles = StyleSheet.create({
     flexDirection: "row",
   }
 });
+export default App;
