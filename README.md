@@ -4,7 +4,7 @@ This is a cross-platform picker with search bar for react native support both pl
 
 
 
-![alt text](https://github.com/vishaldhanotiya/react-native-modal-picker/blob/master/mobizen_20190226_192153_2.gif)
+![alt text](https://github.com/vishaldhanotiya/react-native-modal-picker/blob/master/mobizen_20190226_192153_2.gif) 
 
 
 ## Features
@@ -38,6 +38,7 @@ This is a cross-platform picker with search bar for react native support both pl
 |  showPickerTitle         |  false    |   bool     |  Show and hide picker title                           |   Optional         |
 |  selectedLabel           |  -        |   string   |  Set selected value otherwise its blank               |   Optional         |
 |  placeHolderText         |  -        |   string   |  Use to Show place holder hint text                   |   Required         |
+|  pickerStyle             |  -        |   object   |  Customize picker style                               |   Required         | 
 |  placeHolderTextStyle    |  -        |   object   |  Customize placeholder text style                     |   Optional         |
 |  selectedLabelTextStyle  |  -        |   object   |  Customize selected label text style                  |   Optional         |
 |  dropDownImageStyle      |  -        |   object   |  Customize drop down style                            |   Optional         |
