@@ -172,7 +172,7 @@ export default class RNModalPicker extends PureComponent {
                 <Image
                   resizeMode="contain"
                   style={styles.crossImageStyle}
-                  source={require("../../../res/ic_cancel_grey.png")}
+                  source={require("./res/ic_drop_down.png")}
                 />
               </TouchableOpacity>
               </View>
@@ -226,7 +226,7 @@ RNModalPicker.defaultProps = {
   defaultValue:false,
   showSearchBar: false,
   showPickerTitle: false,
-  dropDownImage:require("../../../res/ic_drop_down.png"),
+  dropDownImage:require("./res/ic_drop_down.png"),
   placeHolderLabel:'Please select value from picker',
   container: {
     flex: 1,
