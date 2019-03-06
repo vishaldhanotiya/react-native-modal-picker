@@ -172,7 +172,7 @@ export default class RNModalPicker extends PureComponent {
                 <Image
                   resizeMode="contain"
                   style={styles.crossImageStyle}
-                  source={require("./res/ic_drop_down.png")}
+                  source={require("./res/ic_cancel_grey.png")}
                 />
               </TouchableOpacity>
               </View>
