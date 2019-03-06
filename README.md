@@ -7,9 +7,11 @@
 
 
 
-<p align="center">
-<img  width="350" height="600" src="https://github.com/vishaldhanotiya/react-native-modal-picker/blob/master/without_search_and_title.gif">
-<img  width="350" height="600" marginLeft="25" src="https://github.com/vishaldhanotiya/react-native-modal-picker/blob/master/with_search_and_title.gif">
+<p align="left">
+<img  width="300" height="400" src="https://github.com/vishaldhanotiya/react-native-modal-picker/blob/master/without_search_and_title.gif">
+  
+  
+<img  width="300" height="400" marginLeft="25" src="https://github.com/vishaldhanotiya/react-native-modal-picker/blob/master/with_search_and_title.gif">
 </p>
 
 
