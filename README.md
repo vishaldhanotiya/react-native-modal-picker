@@ -4,8 +4,8 @@ This is a cross-platform picker with search bar for react native support both pl
 
 
 <p align="center">
-<img  width="350" height="600" src="https://github.com/vishaldhanotiya/react-native-modal-picker/blob/master/mobizen_20190226_192153_2.gif">
-<img  width="350" height="600" marginLeft="25 src="https://github.com/vishaldhanotiya/react-native-modal-picker/blob/master/mobizen_20190226_192153_2.gif">
+<img  width="350" height="600" src="https://github.com/vishaldhanotiya/react-native-modal-picker/blob/master/without_search_and_title.gif">
+<img  width="350" height="600" marginLeft="25 src="https://github.com/vishaldhanotiya/react-native-modal-picker/blob/master/with_search_and_title.gif">
 </p>
 
 
