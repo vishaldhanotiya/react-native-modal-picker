@@ -4,7 +4,7 @@ This is a cross-platform picker with search bar for react native support both pl
 
 
 
-![alt text](https://github.com/vishaldhanotiya/react-native-modal-picker/blob/master/mobizen_20190226_192153_2.gif) 
+![alt text](https://github.com/vishaldhanotiya/react-native-modal-picker/blob/master/mobizen_20190226_192153_2.gif width="200" height="400") 
 
 
 ## Features
@@ -24,6 +24,10 @@ This is a cross-platform picker with search bar for react native support both pl
 #### Step 2 Link
 
 > **react-native link rn-modal-picker**
+
+## Usage
+
+
 
 ## Properties
 
