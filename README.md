@@ -8,7 +8,10 @@
 
 
 <p align="left">
-<img  width="300" height="400" src="https://github.com/vishaldhanotiya/react-native-modal-picker/blob/master/without_search_and_title.gif">
+  
+<img  width="300" height="400" src="https://github.com/vishaldhanotiya/react-native-modal-picker/blob/master/Screenshot_1.jpg">
+  
+<img  width="300" height="400" src="https://github.com/vishaldhanotiya/react-native-modal-picker/blob/master/Screenshot_2.jpg">
   
   
 <img  width="300" height="400" marginLeft="25" src="https://github.com/vishaldhanotiya/react-native-modal-picker/blob/master/with_search_and_title.gif">
