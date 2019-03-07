@@ -9,7 +9,7 @@
 
 <p align="left">
   
-<img  width="280" height="400" src="https://github.com/vishaldhanotiya/react-native-modal-picker/blob/master/Screenshot_1.jpg">
+<img  width="280" height="400" src="https://firebasestorage.googleapis.com/v0/b/vishaldhanotiya-1168.appspot.com/o/Screenshot_1.jpg?alt=media&token=ed3665ba-d28d-4cc2-b67a-2d878df655d6">
   
 <img  width="280" height="400" src="https://github.com/vishaldhanotiya/react-native-modal-picker/blob/master/Screenshot_2.jpg">
   
