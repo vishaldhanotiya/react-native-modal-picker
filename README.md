@@ -9,12 +9,10 @@
 
 <p align="left">
   
-<img  width="280" height="400" src="https://firebasestorage.googleapis.com/v0/b/vishaldhanotiya-1168.appspot.com/o/Screenshot_1.jpg?alt=media&token=ed3665ba-d28d-4cc2-b67a-2d878df655d6">
+<img  width="280" height="400" src="https://firebasestorage.googleapis.com/v0/b/vishaldhanotiya-1168.appspot.com/o/with_search_and_title.gif?alt=media&token=d5348067-6384-4f7b-88fb-07e5fe8b8729">
   
-<img  width="280" height="400" src="https://github.com/vishaldhanotiya/react-native-modal-picker/blob/master/Screenshot_2.jpg">
+<img  width="280" height="400" src="https://firebasestorage.googleapis.com/v0/b/vishaldhanotiya-1168.appspot.com/o/without_search_and_title.gif?alt=media&token=741b1ba3-36cd-4628-84c8-29ca2dde6c78">
   
-  
-<img  width="280" height="400" marginLeft="25" src="https://github.com/vishaldhanotiya/react-native-modal-picker/blob/master/with_search_and_title.gif">
 </p>
 
 
