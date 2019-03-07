@@ -25,11 +25,18 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vishaldhanotiya/react-native-modal-picker.git"
+    "url": "https://github.com/vishaldhanotiya/react-native-modal-picker.git"
   },
   "keywords": [
+    "react-native",
     "react-native-picker",
-    "modal-picker"
+    "modal-picker",
+    "dropdown",
+    "modal-selector",
+    "modal-dropdown",
+    "rn-modal-picker",
+    "rn-picker-dialog"
+
   ],
   "author": "vishaldhanotiya",
   "license": "ISC",
