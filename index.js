@@ -15,12 +15,11 @@ import {
   AppRegistry
 } from "react-native";
 
-import App from './App';
-
+import App from "./App";
 
 console.disableYellowBox = true;
 var i = 0;
- export default class RNModalPicker extends PureComponent {
+export default class RNModalPicker extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -422,6 +421,5 @@ const styles = StyleSheet.create({
     textAlign: "center"
   }
 });
-
 
 //AppRegistry.registerComponent ('RNModalPicker', () => App);

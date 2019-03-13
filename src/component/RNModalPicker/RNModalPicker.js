@@ -132,7 +132,7 @@ export default class RNModalPicker extends PureComponent {
         ) : (
           <View>
             <TouchableOpacity
-               disabled={this.props.disablePicker}
+              disabled={this.props.disablePicker}
               style={styles.picker}
               onPress={() => this.setState({ modalVisible: true })}
               activeOpacity={0.7}
@@ -164,19 +164,18 @@ export default class RNModalPicker extends PureComponent {
                     {" "}
                     {this.props.pickerTitle}
                   </Text>
-                ) : null }
-             
+                ) : null}
 
-              <TouchableOpacity
-                activeOpacity={0.7}
-                onPress={() => this.setState({ modalVisible: false })}
-              >
-                <Image
-                  resizeMode="contain"
-                  style={styles.crossImageStyle}
-                  source={require("../../../res/ic_cancel_grey.png")}
-                />
-              </TouchableOpacity>
+                <TouchableOpacity
+                  activeOpacity={0.7}
+                  onPress={() => this.setState({ modalVisible: false })}
+                >
+                  <Image
+                    resizeMode="contain"
+                    style={styles.crossImageStyle}
+                    source={require("../../../res/ic_cancel_grey.png")}
+                  />
+                </TouchableOpacity>
               </View>
               {this.props.showSearchBar ? (
                 <View style={styles.searchBarContainerStyle}>
@@ -225,13 +224,13 @@ export default class RNModalPicker extends PureComponent {
   }
 }
 RNModalPicker.defaultProps = {
-  defaultValue:false,
+  defaultValue: false,
   showSearchBar: false,
   showPickerTitle: false,
-  disablePicker:false,
-  changeAnimation:'slide',
-  dropDownImage:require("../../../res/ic_drop_down.png"),
-  placeHolderLabel:'Please select value from picker',
+  disablePicker: false,
+  changeAnimation: "slide",
+  dropDownImage: require("../../../res/ic_drop_down.png"),
+  placeHolderLabel: "Please select value from picker",
   container: {
     flex: 1,
     alignItems: "center",
@@ -260,8 +259,8 @@ RNModalPicker.defaultProps = {
   pickerStyle: {
     marginLeft: 18,
     paddingRight: 25,
-    marginRight:10,
-    marginBottom:2,
+    marginRight: 10,
+    marginBottom: 2,
     shadowRadius: 1,
     shadowOpacity: 1.0,
     shadowOffset: {
@@ -272,9 +271,8 @@ RNModalPicker.defaultProps = {
     shadowColor: "#303030",
     borderRadius: 5,
     elevation: 1,
-    flexDirection: "row",
+    flexDirection: "row"
   }
-
 };
 RNModalPicker.propTypes = {
   placeHolderLabel: PropTypes.any,
@@ -287,8 +285,8 @@ RNModalPicker.propTypes = {
   defaultValue: PropTypes.bool,
   showSearchBar: PropTypes.bool,
   showPickerTitle: PropTypes.bool,
-  disablePicker:PropTypes.bool,
-  changeAnimation:PropTypes.string,
+  disablePicker: PropTypes.bool,
+  changeAnimation: PropTypes.string,
   dropDownImageStyle: PropTypes.oneOfType([
     PropTypes.number,
     PropTypes.object,
@@ -317,7 +315,6 @@ RNModalPicker.propTypes = {
   ])
 };
 const styles = StyleSheet.create({
-  
   mainContainer: {
     flexDirection: "row",
     justifyContent: "center",
@@ -327,8 +324,8 @@ const styles = StyleSheet.create({
   pickerTitleContainerStyle: {
     flexDirection: "row",
     width: "100%",
-    alignItems:'flex-end',
-    justifyContent:'flex-end',
+    alignItems: "flex-end",
+    justifyContent: "flex-end",
     alignSelf: "flex-end"
   },
   searchBarContainerStyle: {
@@ -350,9 +347,9 @@ const styles = StyleSheet.create({
   },
 
   flatListStyle: {
-     maxHeight: "85%", 
-     minHeight: "35%" 
-    },
+    maxHeight: "85%",
+    minHeight: "35%"
+  },
   iconGPSStyle: {
     alignItems: "center",
     alignSelf: "center",
@@ -387,11 +384,11 @@ const styles = StyleSheet.create({
   crossImageStyle: {
     width: 40,
     height: 40,
-    marginTop:-4,
+    marginTop: -4,
 
     marginRight: -7,
-    alignItems:'flex-end',
-    justifyContent:'flex-start',
+    alignItems: "flex-end",
+    justifyContent: "flex-start",
     alignSelf: "flex-end"
   },
 
@@ -424,5 +421,5 @@ const styles = StyleSheet.create({
     marginLeft: 40,
     color: "#000",
     textAlign: "center"
-  },
+  }
 });
