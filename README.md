@@ -81,7 +81,9 @@ export default class App extends  Component {
           dataSource={this.state.dataSource}
           dummyDataSource={this.state.dataSource}
           defaultValue={false}
-          pickerTitle={"Sort by"}
+           disablePicker={false}
+          changeAnimation={'slide'}
+          pickerTitle={"Country Picker"}
           showSearchBar={true}
           showPickerTitle={true}
           pickerStyle={Styles.pickerStyle}
@@ -165,7 +167,9 @@ const Styles = StyleSheet.create({
 |  dropDownImageStyle      |  -        |   object   |  Customize drop down style                            |   Optional         |
 |  dropDownImage           |  -        |   png/jpg  |  Add custom drop down image                           |   Optional         |
 |  selectedValue           |  -        |   function |  callback function received value from list selection |   Required         | 
-
+|  changeAnimation         |  -        |   string [slide,none,fade] | Change Modal Animation                  |   Optional         |
+|  disablePicker           |  -        |   bool     |  disable picker if you show default value and no need |   Optional         |       
+|                          |  -        |            |  to change                                            |                    |
 
 
 
