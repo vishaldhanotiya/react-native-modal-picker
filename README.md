@@ -23,6 +23,7 @@
 3. According to use hide and show search bar and title
 4. Dynamically change dropdown image
 5. Customize font size, font color and style 
+6. Change animation(Slide, fade, none)
 
 ## Installation
 
