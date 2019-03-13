@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import HomeScreen from './src/container/HomeScreen/HomeScreen';
 import RNPickerDialog from './src/component/RNModalPicker/RNModalPicker';
- class App extends React.Component {
+export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -116,9 +116,11 @@ import RNPickerDialog from './src/component/RNModalPicker/RNModalPicker';
           dataSource={this.state.dataSource}
           dummyDataSource={this.state.dataSource}
           defaultValue={false}
-          pickerTitle={"Sort by"}
+          disablePicker={false}
+          changeAnimation={'slide'}
+          pickerTitle={"Country Picker"}
           showSearchBar={true}
-          showPickerTitle={true}
+          showPickerTitle={false}
           pickerStyle={Styles.pickerStyle}
           selectedLabel={this.state.selectedText}
           placeHolderLabel={this.state.placeHolderText}
@@ -178,4 +180,3 @@ const Styles = StyleSheet.create({
     flexDirection: "row",
   }
 });
-export default App;
