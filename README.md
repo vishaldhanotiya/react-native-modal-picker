@@ -168,7 +168,7 @@ const Styles = StyleSheet.create({
 |  dropDownImage           |  -        |   png/jpg  |  Add custom drop down image                           |   Optional         |
 |  selectedValue           |  -        |   function |  callback function received value from list selection |   Required         | 
 |  changeAnimation         |  -        |   string [slide,none,fade] | Change Modal Animation                |   Optional         |
-|  disablePicker           |  -        |   bool     |  disable picker if you show default value and no need to change| Optional  |
+|  disablePicker           |  -        |   bool     |  Disable picker if you show default value and no need to change| Optional  |
 
 
 
