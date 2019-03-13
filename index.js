@@ -118,6 +118,7 @@ export default class RNModalPicker extends PureComponent {
         {this.state.selectedFlag ? (
           <View>
             <TouchableOpacity
+              disabled={this.props.disablePicker}
               onPress={() => this.setState({ modalVisible: true })}
               activeOpacity={0.7}
             >
@@ -135,6 +136,7 @@ export default class RNModalPicker extends PureComponent {
         ) : (
           <View>
             <TouchableOpacity
+              disabled={this.props.disablePicker}
               style={styles.picker}
               onPress={() => this.setState({ modalVisible: true })}
               activeOpacity={0.7}
@@ -155,7 +157,7 @@ export default class RNModalPicker extends PureComponent {
         <Modal
           visible={this.state.modalVisible}
           transparent={true}
-          animationType={"slide"}
+          animationType={this.props.changeAnimation}
           onRequestClose={() => this.setState({ modalVisible: false })}
         >
           <View style={styles.container}>
@@ -175,7 +177,7 @@ export default class RNModalPicker extends PureComponent {
                   <Image
                     resizeMode="contain"
                     style={styles.crossImageStyle}
-                    source={require("./res/ic_cancel_grey.png")}
+                    source={require("../../../res/ic_cancel_grey.png")}
                   />
                 </TouchableOpacity>
               </View>
@@ -229,7 +231,9 @@ RNModalPicker.defaultProps = {
   defaultValue: false,
   showSearchBar: false,
   showPickerTitle: false,
-  dropDownImage: require("./res/ic_drop_down.png"),
+  disablePicker: false,
+  changeAnimation: "slide",
+  dropDownImage: require("../../../res/ic_drop_down.png"),
   placeHolderLabel: "Please select value from picker",
   container: {
     flex: 1,
@@ -285,7 +289,8 @@ RNModalPicker.propTypes = {
   defaultValue: PropTypes.bool,
   showSearchBar: PropTypes.bool,
   showPickerTitle: PropTypes.bool,
-
+  disablePicker: PropTypes.bool,
+  changeAnimation: PropTypes.string,
   dropDownImageStyle: PropTypes.oneOfType([
     PropTypes.number,
     PropTypes.object,
@@ -347,7 +352,7 @@ const styles = StyleSheet.create({
 
   flatListStyle: {
     maxHeight: "85%",
-    marginBottom: 10
+    minHeight: "35%"
   },
   iconGPSStyle: {
     alignItems: "center",
@@ -384,9 +389,10 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
     marginTop: -4,
-    marginRight: -8,
+
+    marginRight: -7,
     alignItems: "flex-end",
-    justifyContent: "flex-end",
+    justifyContent: "flex-start",
     alignSelf: "flex-end"
   },
 
@@ -415,11 +421,12 @@ const styles = StyleSheet.create({
   pickerTitleTextStyle: {
     fontSize: 18,
     flex: 1,
-    padding: 10,
+    paddingBottom: 10,
     marginLeft: 40,
     color: "#000",
     textAlign: "center"
   }
 });
+
 
 //AppRegistry.registerComponent ('RNModalPicker', () => App);
