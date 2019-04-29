@@ -182,7 +182,7 @@ export default class RNModalPicker extends PureComponent {
                 </TouchableOpacity>
               </View>
               {this.props.showSearchBar ? (
-                <View style={styles.searchBarContainerStyle}>
+                <View style={this.props.searchBarContainerStyle}>
                   {/* <Image
                           resizeMode="contain"
                           style={styles.iconGPSStyle}
@@ -196,7 +196,7 @@ export default class RNModalPicker extends PureComponent {
                         this.props.dummyDataSource
                       )
                     }
-                    placeholder={"Search"}
+                    placeholder={this.props.searchBarPlaceHolder}
                     style={styles.textInputStyle}
                     placeholderTextColor={"#909090"}
                     underlineColorAndroid="transparent"
@@ -235,6 +235,8 @@ RNModalPicker.defaultProps = {
   changeAnimation: "slide",
   dropDownImage: require("./res/ic_drop_down.png"),
   placeHolderLabel: "Please select value from picker",
+  searchBarPlaceHolder:"Search",
+  searchBarPlaceHolderColor:'#9d9d9d',
   container: {
     flex: 1,
     alignItems: "center",
@@ -246,6 +248,23 @@ RNModalPicker.defaultProps = {
     width: "99%",
     padding: 10,
     flexDirection: "row"
+  },
+  searchBarContainerStyle: {
+    marginBottom: 10,
+    flexDirection: "row",
+    height: 40,
+    shadowRadius: 1,
+    shadowOpacity: 1.0,
+    shadowOffset: {
+      width: 1,
+      height: 1
+    },
+    borderColor: "#303030",
+    shadowColor: "#303030",
+    borderRadius: 5,
+    elevation: 1,
+    marginLeft: 10,
+    marginRight: 10
   },
   placeHolderTextStyle: {
     color: "#D3D3D3",
@@ -291,6 +310,8 @@ RNModalPicker.propTypes = {
   showPickerTitle: PropTypes.bool,
   disablePicker: PropTypes.bool,
   changeAnimation: PropTypes.string,
+  searchBarPlaceHolder:PropTypes.string,
+  searchBarPlaceHolderColor:PropTypes.any,
   dropDownImageStyle: PropTypes.oneOfType([
     PropTypes.number,
     PropTypes.object,
@@ -298,6 +319,12 @@ RNModalPicker.propTypes = {
   ]),
 
   selectLabelTextStyle: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.object,
+    PropTypes.array
+  ]),
+
+  searchBarContainerStyle: PropTypes.oneOfType([
     PropTypes.number,
     PropTypes.object,
     PropTypes.array

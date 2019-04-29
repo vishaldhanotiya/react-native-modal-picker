@@ -122,9 +122,11 @@ export default class HomeScreen extends React.Component {
           pickerStyle={Styles.pickerStyle}
           selectedLabel={this.state.selectedText}
           placeHolderLabel={this.state.placeHolderText}
+          searchBarPlaceHolder={"Search....."}
           selectLabelTextStyle={Styles.selectLabelTextStyle}
           placeHolderTextStyle={Styles.placeHolderTextStyle}
           dropDownImageStyle={Styles.dropDownImageStyle}
+          searchBarContainerStyle={Styles.searchBarContainerStyle}
       
           dropDownImage={require("../../../res/ic_drop_down.png")}
           selectedValue={(index, name) => this._selectedValue(index, name)}
@@ -147,6 +149,24 @@ const Styles = StyleSheet.create({
     padding: 10,
     flexDirection: "row"
   },
+  searchBarContainerStyle: {
+    marginBottom: 10,
+    flexDirection: "row",
+    height: 40,
+    shadowRadius: 1,
+    shadowOpacity: 1.0,
+    borderWidth:1,
+    shadowOffset: {
+      width: 1,
+      height: 1
+    },
+    borderColor: "#303030",
+    shadowColor: "#303030",
+    borderRadius: 5,
+    elevation: 1,
+    marginLeft: 10,
+    marginRight: 10
+  },
   placeHolderTextStyle: {
     color: "#D3D3D3",
     padding: 10,
@@ -166,6 +186,7 @@ const Styles = StyleSheet.create({
     marginRight:10,
     marginBottom:2,
     shadowRadius: 1,
+    borderWidth:1,
     shadowOpacity: 1.0,
     shadowOffset: {
       width: 1,
