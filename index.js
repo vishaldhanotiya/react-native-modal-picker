@@ -66,17 +66,28 @@ export default class RNModalPicker extends PureComponent {
       </View>
     );
   }
+
+  componentDidMount() {    
+    this.setState({ dataSource: this.props.dataSource });
+  }
+
   _searchFilterFunction(searchText, data) {
     i = 1;
-    const newData = data.filter(function(item) {
-      const itemData = item.name.toUpperCase();
-      const textData = searchText.toUpperCase();
-      return itemData.startsWith(textData);
-    });
-    this.setState({
-      dataSource: [...newData]
-    });
+    let newData = [];
+    if (searchText) {
+      newData = data.filter(function (item) {
+        const itemData = item.name.toUpperCase();
+        const textData = searchText.toUpperCase();
+        return itemData.startsWith(textData);
+      });
+      this.setState({
+        dataSource: [...newData]
+      });
+    } else {
+      this.setState({ dataSource: this.props.dataSource });
+    }
   }
+
 
   _renderItemListValues(item, index) {
     return (
@@ -109,10 +120,7 @@ export default class RNModalPicker extends PureComponent {
   }
 
   render() {
-    if (i == 1) {
-    } else {
-      this.setState({ dataSource: this.props.dataSource });
-    }
+
     return (
       <View style={styles.mainContainer}>
         {this.state.selectedFlag ? (
