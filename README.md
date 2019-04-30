@@ -37,18 +37,19 @@
 
 ## Usage
 
-```import React,{Component} from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import RNPic from  'rn-modal-picker'
+```
+import React, { Component } from "react";
+import { StyleSheet, Text, View } from "react-native";
+import RNPicker from "rn-modal-picker";
 
-export default class App extends  Component {
+export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       dataSource: [
         {
           id: 1,
-          name: "India"
+          name: "Afghanistan"
         },
         {
           id: 2,
@@ -66,9 +67,37 @@ export default class App extends  Component {
           id: 5,
           name: "Egypt"
         },
+        {
+          id: 6,
+          name: "France"
+        },
+        {
+          id: 7,
+          name: "Greece"
+        },
+        {
+          id: 8,
+          name: "Hong Kong"
+        },
+        {
+          id: 9,
+          name: "India"
+        },
+        {
+          id: 10,
+          name: "Japan"
+        },
+        {
+          id: 11,
+          name: "Kenya"
+        },
+        {
+          id: 12,
+          name: "Liberia"
+        }
       ],
       placeHolderText: "Please Select Country",
-      selectedText: "",
+      selectedText: ""
     };
   }
   _selectedValue(index, name) {
@@ -78,15 +107,20 @@ export default class App extends  Component {
   render() {
     return (
       <View style={Styles.container}>
-        <RNPic
+        <Text style={{ marginBottom: 50, fontSize: 25, fontWeight: "bold" }}>
+          {"React Native Picker With Search"}
+        </Text>
+        <RNPicker
           dataSource={this.state.dataSource}
           dummyDataSource={this.state.dataSource}
           defaultValue={false}
-           disablePicker={false}
-          changeAnimation={'slide'}
           pickerTitle={"Country Picker"}
           showSearchBar={true}
+          disablePicker={false}
+          changeAnimation={"none"}
+          searchBarPlaceHolder={"Search....."}
           showPickerTitle={true}
+          searchBarContainerStyle={this.props.searchBarContainerStyle}
           pickerStyle={Styles.pickerStyle}
           selectedLabel={this.state.selectedText}
           placeHolderLabel={this.state.placeHolderText}
@@ -107,6 +141,25 @@ const Styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center"
   },
+
+  searchBarContainerStyle: {
+    marginBottom: 10,
+    flexDirection: "row",
+    height: 40,
+    shadowOpacity: 1.0,
+    shadowRadius: 5,
+    shadowOffset: {
+      width: 1,
+      height: 1
+    },
+    backgroundColor: "rgba(255,255,255,1)",
+    shadowColor: "#d3d3d3",
+    borderRadius: 10,
+    elevation: 3,
+    marginLeft: 10,
+    marginRight: 10
+  },
+
   selectLabelTextStyle: {
     color: "#000",
     textAlign: "left",
@@ -127,22 +180,24 @@ const Styles = StyleSheet.create({
     height: 10,
     alignSelf: "center"
   },
+
   pickerStyle: {
     marginLeft: 18,
+    elevation:3,
     paddingRight: 25,
-    marginRight:10,
-    marginBottom:2,
-    shadowRadius: 1,
+    marginRight: 10,
+    marginBottom: 2,
     shadowOpacity: 1.0,
     shadowOffset: {
       width: 1,
       height: 1
     },
-    borderColor: "#303030",
-    shadowColor: "#303030",
+    borderWidth:1,
+    shadowRadius: 10,
+    backgroundColor: "rgba(255,255,255,1)",
+    shadowColor: "#d3d3d3",
     borderRadius: 5,
-    elevation: 1,
-    flexDirection: "row",
+    flexDirection: "row"
   }
 });
 ```
@@ -165,6 +220,7 @@ const Styles = StyleSheet.create({
 |  pickerStyle             |  -        |   object   |  Customize picker style                               |   Required         | 
 |  placeHolderTextStyle    |  -        |   object   |  Customize placeholder text style                     |   Optional         |
 |  selectedLabelTextStyle  |  -        |   object   |  Customize selected label text style                  |   Optional         |
+|  searchBarContainerStyle |  -        |   object   |  Customize Search bar Container style                 |   Optional         |     
 |  dropDownImageStyle      |  -        |   object   |  Customize drop down style                            |   Optional         |
 |  dropDownImage           |  -        |   png/jpg  |  Add custom drop down image                           |   Optional         |
 |  selectedValue           |  -        |   function |  callback function received value from list selection |   Required         | 
