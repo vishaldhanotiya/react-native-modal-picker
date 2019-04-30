@@ -10,12 +10,8 @@ import {
   StyleSheet,
   TouchableOpacity,
   I18nManager,
-  TextInput,
-  ScrollView,
-  AppRegistry
+  TextInput
 } from "react-native";
-
-import App from "./App";
 
 console.disableYellowBox = true;
 var i = 0;
@@ -67,7 +63,7 @@ export default class RNModalPicker extends PureComponent {
     );
   }
 
-  componentDidMount() {    
+  componentDidMount() {
     this.setState({ dataSource: this.props.dataSource });
   }
 
@@ -75,7 +71,7 @@ export default class RNModalPicker extends PureComponent {
     i = 1;
     let newData = [];
     if (searchText) {
-      newData = data.filter(function (item) {
+      newData = data.filter(function(item) {
         const itemData = item.name.toUpperCase();
         const textData = searchText.toUpperCase();
         return itemData.startsWith(textData);
@@ -87,7 +83,6 @@ export default class RNModalPicker extends PureComponent {
       this.setState({ dataSource: this.props.dataSource });
     }
   }
-
 
   _renderItemListValues(item, index) {
     return (
@@ -120,7 +115,6 @@ export default class RNModalPicker extends PureComponent {
   }
 
   render() {
-
     return (
       <View style={styles.mainContainer}>
         {this.state.selectedFlag ? (
@@ -206,7 +200,6 @@ export default class RNModalPicker extends PureComponent {
                     }
                     placeholder={this.props.searchBarPlaceHolder}
                     style={styles.textInputStyle}
-                    placeholderTextColor={"#909090"}
                     underlineColorAndroid="transparent"
                     keyboardType="default"
                     returnKeyType={"done"}
@@ -243,8 +236,8 @@ RNModalPicker.defaultProps = {
   changeAnimation: "slide",
   dropDownImage: require("./res/ic_drop_down.png"),
   placeHolderLabel: "Please select value from picker",
-  searchBarPlaceHolder:"Search",
-  searchBarPlaceHolderColor:'#9d9d9d',
+  searchBarPlaceHolder: "Search",
+
   container: {
     flex: 1,
     alignItems: "center",
@@ -261,16 +254,16 @@ RNModalPicker.defaultProps = {
     marginBottom: 10,
     flexDirection: "row",
     height: 40,
-    shadowRadius: 1,
     shadowOpacity: 1.0,
+    shadowRadius: 5,
     shadowOffset: {
       width: 1,
       height: 1
     },
-    borderColor: "#303030",
-    shadowColor: "#303030",
-    borderRadius: 5,
-    elevation: 1,
+    backgroundColor: "rgba(255,255,255,1)",
+    shadowColor: "#d3d3d3",
+    borderRadius: 10,
+    elevation: 3,
     marginLeft: 10,
     marginRight: 10
   },
@@ -289,19 +282,20 @@ RNModalPicker.defaultProps = {
   },
   pickerStyle: {
     marginLeft: 18,
+    elevation: 3,
     paddingRight: 25,
     marginRight: 10,
     marginBottom: 2,
-    shadowRadius: 1,
     shadowOpacity: 1.0,
     shadowOffset: {
       width: 1,
       height: 1
     },
-    borderColor: "#303030",
-    shadowColor: "#303030",
+    borderWidth: 1,
+    shadowRadius: 10,
+    backgroundColor: "rgba(255,255,255,1)",
+    shadowColor: "#d3d3d3",
     borderRadius: 5,
-    elevation: 1,
     flexDirection: "row"
   }
 };
@@ -318,8 +312,7 @@ RNModalPicker.propTypes = {
   showPickerTitle: PropTypes.bool,
   disablePicker: PropTypes.bool,
   changeAnimation: PropTypes.string,
-  searchBarPlaceHolder:PropTypes.string,
-  searchBarPlaceHolderColor:PropTypes.any,
+  searchBarPlaceHolder: PropTypes.string,
   dropDownImageStyle: PropTypes.oneOfType([
     PropTypes.number,
     PropTypes.object,
@@ -371,16 +364,16 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     flexDirection: "row",
     height: 40,
-    shadowRadius: 1,
     shadowOpacity: 1.0,
+    shadowRadius: 5,
     shadowOffset: {
       width: 1,
       height: 1
     },
-    borderColor: "#303030",
-    shadowColor: "#303030",
-    borderRadius: 5,
-    elevation: 1,
+    backgroundColor: "rgba(255,255,255,1)",
+    shadowColor: "#d3d3d3",
+    borderRadius: 10,
+    elevation: 3,
     marginLeft: 10,
     marginRight: 10
   },
@@ -462,6 +455,5 @@ const styles = StyleSheet.create({
     textAlign: "center"
   }
 });
-
 
 //AppRegistry.registerComponent ('RNModalPicker', () => App);
