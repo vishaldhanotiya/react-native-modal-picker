@@ -14,7 +14,6 @@ import {
 } from "react-native";
 
 console.disableYellowBox = true;
-var i = 0;
 export default class RNModalPicker extends PureComponent {
   constructor(props) {
     super(props);
@@ -68,7 +67,6 @@ export default class RNModalPicker extends PureComponent {
   }
 
   _searchFilterFunction(searchText, data) {
-    i = 1;
     let newData = [];
     if (searchText) {
       newData = data.filter(function(item) {
@@ -89,7 +87,7 @@ export default class RNModalPicker extends PureComponent {
       <TouchableOpacity
         activeOpacity={1}
         style={styles.listRowClickTouchStyle}
-        onPress={() => this._setSelectedIndex(item.id, item.name)}
+        onPress={() => this._setSelectedIndex(index, item.id, item.name)}
       >
         <View style={styles.listRowContainerStyle}>
           <Text style={styles.listTextViewStyle}>{item.name}</Text>
@@ -98,20 +96,11 @@ export default class RNModalPicker extends PureComponent {
     );
   }
 
-  _setSelectedIndex(id, name) {
-    if (i == 0) {
-      i = 0;
-      this.props.selectedValue(0, name);
+  _setSelectedIndex(index, id, name) {
+      this.props.selectedValue(index, name, id);
 
       this.setState({ selectedFlag: true });
       this.setState({ modalVisible: false });
-    } else {
-      i = 0;
-      this.props.selectedValue(id, name);
-
-      this.setState({ selectedFlag: true });
-      this.setState({ modalVisible: false });
-    }
   }
 
   render() {
