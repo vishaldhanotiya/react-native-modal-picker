@@ -99,8 +99,7 @@ export default class RNModalPicker extends PureComponent {
   _setSelectedIndex(index, id, name) {
       this.props.selectedValue(index, name, id);
 
-      this.setState({ selectedFlag: true });
-      this.setState({ modalVisible: false });
+      this.setState({ selectedFlag: true ,modalVisible: false});
   }
 
   render() {
@@ -148,8 +147,9 @@ export default class RNModalPicker extends PureComponent {
         <Modal
           visible={this.state.modalVisible}
           transparent={true}
+          onShow={()=>this.setState({dataSource:this.props.dataSource})}
           animationType={this.props.changeAnimation}
-          onRequestClose={() => this.setState({ modalVisible: false })}
+          onRequestClose={() => this.setState({ modalVisible: false})}
         >
           <View style={styles.container}>
             <View style={styles.listDataContainerStyle}>
