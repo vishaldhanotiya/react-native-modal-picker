@@ -104,8 +104,8 @@ export default class HomeScreen extends React.Component {
       select: "",
     };
   }
-  _selectedValue(index, name) {
-    this.setState({ selectedText: name });
+  _selectedValue(index, item) {
+    this.setState({ selectedText: item.name });
   }
 
   render() {
@@ -129,7 +129,7 @@ export default class HomeScreen extends React.Component {
           searchBarContainerStyle={Styles.searchBarContainerStyle}
       
           dropDownImage={require("../../../res/ic_drop_down.png")}
-          selectedValue={(index, name) => this._selectedValue(index, name)}
+          selectedValue={(index, item) => this._selectedValue(index, item)}
         />
       </View>
     );

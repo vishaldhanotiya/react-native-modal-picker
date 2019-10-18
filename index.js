@@ -87,7 +87,7 @@ export default class RNModalPicker extends PureComponent {
       <TouchableOpacity
         activeOpacity={1}
         style={styles.listRowClickTouchStyle}
-        onPress={() => this._setSelectedIndex(index, item.id, item.name)}
+        onPress={() => this._setSelectedIndex(index, item)}
       >
         <View style={styles.listRowContainerStyle}>
           <Text style={styles.listTextViewStyle}>{item.name}</Text>
@@ -96,8 +96,8 @@ export default class RNModalPicker extends PureComponent {
     );
   }
 
-  _setSelectedIndex(index, id, name) {
-      this.props.selectedValue(index, name, id);
+  _setSelectedIndex(index, item) {
+      this.props.selectedValue(index,item);
 
       this.setState({ selectedFlag: true ,modalVisible: false});
   }
