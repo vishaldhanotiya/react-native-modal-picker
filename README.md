@@ -1,11 +1,16 @@
-# rn-modal-picker
+<p align="center">
+  <h1 align="center">React Native Modal Picker</h1>
+</p>
 
+<p align="center">
+  <a href="https://www.npmjs.com/package/react-native-firebase"><img src="https://img.shields.io/badge/npm-v0.2.4-blue?style=flat-square" alt="NPM Version"></a>
+  <a href="https://www.npmjs.com/package/react-native-firebase"><img src="https://img.shields.io/badge/downloads-100%2Fweek-brightgreen?style=flat-square" alt="NPM downloads"></a>
+  <a href="/LICENSE"><img src="https://img.shields.io/badge/license-MIT-brightgreen?style=flat-square" alt="License"></a>
+</p>
 
-## This is a cross-platform picker with search bar for react native support both platform IOs and android
-
-
-
-
+<p align="center">
+  <h2 align="center">This is a cross-platform picker with search bar for react native support both platform IOs and android</h2>
+</p>
 
 <p align="left">
   
