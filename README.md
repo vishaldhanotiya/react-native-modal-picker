@@ -105,8 +105,8 @@ export default class App extends Component {
       selectedText: ""
     };
   }
-  _selectedValue(index, name) {
-    this.setState({ selectedText: name });
+  _selectedValue(index, item) {
+    this.setState({ selectedText: item.name });
   }
 
   render() {
@@ -133,7 +133,7 @@ export default class App extends Component {
           placeHolderTextStyle={Styles.placeHolderTextStyle}
           dropDownImageStyle={Styles.dropDownImageStyle}
           dropDownImage={require("./res/ic_drop_down.png")}
-          selectedValue={(index, name) => this._selectedValue(index, name)}
+          selectedValue={(index, name) => this._selectedValue(index, item)}
         />
       </View>
     );
