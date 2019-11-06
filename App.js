@@ -104,8 +104,8 @@ export default class HomeScreen extends React.Component {
       select: "",
     };
   }
-  _selectedValue(index, name) {
-    this.setState({ selectedText: name });
+  _selectedValue(index, item) {
+    this.setState({ selectedText: item.name });
   }
 
   render() {
@@ -120,6 +120,7 @@ export default class HomeScreen extends React.Component {
           showSearchBar={true}
           showPickerTitle={true}
           pickerStyle={Styles.pickerStyle}
+          pickerItemTextStyle={Styles.listTextViewStyle}
           selectedLabel={this.state.selectedText}
           placeHolderLabel={this.state.placeHolderText}
           searchBarPlaceHolder={"Search....."}
@@ -130,7 +131,7 @@ export default class HomeScreen extends React.Component {
           searchBarContainerStyle={Styles.searchBarContainerStyle}
       
           dropDownImage={require("../../../res/ic_drop_down.png")}
-          selectedValue={(index, name) => this._selectedValue(index, name)}
+          selectedValue={(index, item) => this._selectedValue(index, item)}
         />
       </View>
     );
@@ -149,6 +150,14 @@ const Styles = StyleSheet.create({
     width: "99%",
     padding: 10,
     flexDirection: "row"
+  },
+  listTextViewStyle: {
+    color: "#000",
+    marginVertical: 10,
+    flex: 0.9,
+    marginLeft: 20,
+    marginHorizontal: 10,
+    textAlign: "left"
   },
   searchBarContainerStyle: {
     marginBottom: 10,
