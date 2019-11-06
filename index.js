@@ -269,6 +269,14 @@ RNModalPicker.defaultProps = {
     height: 10,
     alignSelf: "center"
   },
+  pickerItemTextStyle: {
+    color: "#000",
+    marginVertical: 10,
+    flex: 0.9,
+    marginLeft: 20,
+    marginHorizontal: 10,
+    textAlign: "left"
+  },
   pickerStyle: {
     marginLeft: 18,
     elevation: 3,
@@ -302,6 +310,11 @@ RNModalPicker.propTypes = {
   disablePicker: PropTypes.bool,
   changeAnimation: PropTypes.string,
   searchBarPlaceHolder: PropTypes.string,
+  pickerItemTextStyle:PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.object,
+    PropTypes.array
+  ]),
   dropDownImageStyle: PropTypes.oneOfType([
     PropTypes.number,
     PropTypes.object,
@@ -421,14 +434,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white"
   },
 
-  listTextViewStyle: {
-    color: "#000",
-    marginVertical: 10,
-    flex: 0.9,
-    marginLeft: 20,
-    marginHorizontal: 10,
-    textAlign: "left"
-  },
+ 
   listRowClickTouchStyle: {
     justifyContent: "center",
     flexDirection: "row",
