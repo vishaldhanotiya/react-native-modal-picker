@@ -127,6 +127,7 @@ export default class App extends Component {
           showPickerTitle={true}
           searchBarContainerStyle={this.props.searchBarContainerStyle}
           pickerStyle={Styles.pickerStyle}
+          pickerItemTextStyle={Styles.listTextViewStyle}
           selectedLabel={this.state.selectedText}
           placeHolderLabel={this.state.placeHolderText}
           selectLabelTextStyle={Styles.selectLabelTextStyle}
@@ -185,7 +186,14 @@ const Styles = StyleSheet.create({
     height: 10,
     alignSelf: "center"
   },
-
+  listTextViewStyle: {
+    color: "#000",
+    marginVertical: 10,
+    flex: 0.9,
+    marginLeft: 20,
+    marginHorizontal: 10,
+    textAlign: "left"
+  },
   pickerStyle: {
     marginLeft: 18,
     elevation:3,
@@ -223,6 +231,7 @@ const Styles = StyleSheet.create({
 |  selectedLabel           |  -        |   string   |  Set selected value otherwise its blank               |   Optional         |
 |  placeHolderText         |  -        |   string   |  Use to Show place holder hint text                   |   Required         |
 |  pickerStyle             |  -        |   object   |  Customize picker style                               |   Required         | 
+|  pickerItemTextStyle     |  -        |   object   |  Customize picker item text style                     |   Optional         | 
 |  placeHolderTextStyle    |  -        |   object   |  Customize placeholder text style                     |   Optional         |
 |  selectedLabelTextStyle  |  -        |   object   |  Customize selected label text style                  |   Optional         |
 |  searchBarContainerStyle |  -        |   object   |  Customize Search bar Container style                 |   Optional         |     
