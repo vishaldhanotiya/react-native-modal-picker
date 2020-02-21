@@ -127,6 +127,7 @@ export default class App extends Component {
           showPickerTitle={true}
           searchBarContainerStyle={this.props.searchBarContainerStyle}
           pickerStyle={Styles.pickerStyle}
+          itemSeparatorStyle={Styles.itemSeparatorStyle}
           pickerItemTextStyle={Styles.listTextViewStyle}
           selectedLabel={this.state.selectedText}
           placeHolderLabel={this.state.placeHolderText}
@@ -147,7 +148,12 @@ const Styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center"
   },
-
+  itemSeparatorStyle:{
+    height: 1,
+    width: "90%",
+    alignSelf: "center",
+    backgroundColor: "#D3D3D3"
+  },
   searchBarContainerStyle: {
     marginBottom: 10,
     flexDirection: "row",
@@ -233,6 +239,7 @@ const Styles = StyleSheet.create({
 |  pickerStyle             |  -        |   object   |  Customize picker style                               |   Required         | 
 |  pickerItemTextStyle     |  -        |   object   |  Customize picker item text style                     |   Optional         | 
 |  placeHolderTextStyle    |  -        |   object   |  Customize placeholder text style                     |   Optional         |
+|  itemSeparatorStyle      |  -        |   object   |  Style for Horizontal Line between item               |   Optional         |
 |  selectedLabelTextStyle  |  -        |   object   |  Customize selected label text style                  |   Optional         |
 |  searchBarContainerStyle |  -        |   object   |  Customize Search bar Container style                 |   Optional         |     
 |  dropDownImageStyle      |  -        |   object   |  Customize drop down style                            |   Optional         |
