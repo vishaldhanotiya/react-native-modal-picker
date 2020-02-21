@@ -72,7 +72,7 @@ export default class RNModalPicker extends PureComponent {
       newData = data.filter(function(item) {
         const itemData = item.name.toUpperCase();
         const textData = searchText.toUpperCase();
-        return itemData.startsWith(textData);
+        return itemData.includes(textData);
       });
       this.setState({
         dataSource: [...newData]
@@ -81,7 +81,13 @@ export default class RNModalPicker extends PureComponent {
       this.setState({ dataSource: this.props.dataSource });
     }
   }
-
+  _flatListItemSeparator(itemSeparatorStyle){
+    return (
+      <View
+        style={itemSeparatorStyle}
+      />
+    );
+  }
   _renderItemListValues(item, index) {
     return (
       <TouchableOpacity
@@ -203,6 +209,7 @@ export default class RNModalPicker extends PureComponent {
                 showsVerticalScrollIndicator={false}
                 extraData={this.state}
                 overScrollMode="never"
+                ItemSeparatorComponent={()=>this._flatListItemSeparator(this.props.itemSeparatorStyle)}
                 keyboardShouldPersistTaps="always"
                 numColumns={1}
                 data={this.state.dataSource}
@@ -310,6 +317,11 @@ RNModalPicker.propTypes = {
   disablePicker: PropTypes.bool,
   changeAnimation: PropTypes.string,
   searchBarPlaceHolder: PropTypes.string,
+  itemSeparatorStyle:PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.object,
+    PropTypes.array
+  ]),
   pickerItemTextStyle:PropTypes.oneOfType([
     PropTypes.number,
     PropTypes.object,
