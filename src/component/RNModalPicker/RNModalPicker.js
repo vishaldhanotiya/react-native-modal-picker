@@ -93,6 +93,7 @@ export default class RNModalPicker extends PureComponent {
         <View style={styles.listRowContainerStyle}>
           <Text style={styles.listTextViewStyle}>{item.DAYTIME}</Text>
           <Text style={styles.listTextViewStyle}>{item.name}</Text>
+          <Text style={styles.listTextViewStyle}>{item.PROFESSOR}</Text>
         </View>
       </TouchableOpacity>
     );
