@@ -42,7 +42,7 @@
 
 ## Usage
 
-```
+```jsx
 import React, { Component } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import RNPicker from "rn-modal-picker";
