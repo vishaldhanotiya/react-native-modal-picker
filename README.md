@@ -53,51 +53,51 @@ export default class App extends Component {
     this.state = {
       dataSource: [
         {
-          id: 1,
+          id: "1",
           name: "Afghanistan"
         },
         {
-          id: 2,
+          id: "2",
           name: "Bahrain"
         },
         {
-          id: 3,
+          id: "3",
           name: "Canada"
         },
         {
-          id: 4,
+          id: "4",
           name: "Denmark"
         },
         {
-          id: 5,
+          id: "5",
           name: "Egypt"
         },
         {
-          id: 6,
+          id: "6",
           name: "France"
         },
         {
-          id: 7,
+          id: "7",
           name: "Greece"
         },
         {
-          id: 8,
+          id: "8",
           name: "Hong Kong"
         },
         {
-          id: 9,
+          id: "9",
           name: "India"
         },
         {
-          id: 10,
+          id: "10",
           name: "Japan"
         },
         {
-          id: 11,
+          id: "11",
           name: "Kenya"
         },
         {
-          id: 12,
+          id: "12",
           name: "Liberia"
         }
       ],
