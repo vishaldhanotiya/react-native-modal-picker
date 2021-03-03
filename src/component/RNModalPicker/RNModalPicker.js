@@ -91,7 +91,9 @@ export default class RNModalPicker extends PureComponent {
         onPress={() => this._setSelectedIndex(item.id, item.name)}
       >
         <View style={styles.listRowContainerStyle}>
+          <Text style={styles.listTextViewStyle}>{item.DAYTIME}</Text>
           <Text style={styles.listTextViewStyle}>{item.name}</Text>
+          <Text style={styles.listTextViewStyle}>{item.PROFESSOR}</Text>
         </View>
       </TouchableOpacity>
     );
