@@ -1,6 +1,6 @@
 {
   "name": "rn-modal-picker",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "private": false,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
