@@ -6,7 +6,7 @@
   <a href="https://www.npmjs.com/package/react-native-firebase"><img src="https://img.shields.io/badge/npm-v0.2.4-blue?style=flat-square" alt="NPM Version"></a>
   <a href="https://www.npmjs.com/package/react-native-firebase"><img src="https://img.shields.io/badge/downloads-100%2Fweek-brightgreen?style=flat-square" alt="NPM downloads"></a>
   <a href="/LICENSE"><img src="https://img.shields.io/badge/license-MIT-brightgreen?style=flat-square" alt="License"></a>
-</p>
+</p>  
 
 <p align="center">
   <h2 align="center">This is a cross-platform picker with search bar for react native support both platform IOs and android</h2>
@@ -111,10 +111,6 @@ export default class HomeScreen extends React.Component {
         {
           id: 15,
           name: 'Oman',
-        },
-        {
-          id: 16,
-          name: 'Poland',
         },
       ],
       placeHolderText: 'Please Select Country',
