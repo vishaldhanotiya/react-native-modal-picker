@@ -11,12 +11,12 @@ import {
   ImageStyle,
   TextStyle,
 } from 'react-native';
-import SearchBar from './SearchBar';
-import PickerListItem from './PickerListItem';
-import PickerView from './PickerView';
+import SearchBar from './modalPicker/SearchBar';
+import PickerListItem from './modalPicker/PickerListItem';
+import PickerView from './modalPicker/PickerView';
 
 const ModalPicker = (props: ModalPickerProps) => {
-  const [data, setData] = useState<any[]>(props?.data);
+  const [data, setData] = useState(props?.data);
   const [selectedValue, setSelectedValue] = useState();
   const [isModalVisible, setModalVisible] = useState<boolean>(false);
 

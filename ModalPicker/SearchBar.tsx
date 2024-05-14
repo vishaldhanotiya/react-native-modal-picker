@@ -5,14 +5,14 @@ import {
   Image,
   I18nManager,
   Platform,
-} from 'react-native';
-import React, {useState} from 'react';
+} from "react-native";
+import React, { useState } from "react";
 
 const SearchBar = (props) => {
-  const [text, setText] = useState('');
+  const [text, setText] = useState("");
   const searchIcon = props.searchImage
-    ? props.searchImage
-    : require('../res/ic_search.png');
+    ? { uri: props.searchImage }
+    : require("../res/ic_search.png");
   return (
     <View style={[styles.searchBarStyle, props.searchBarStyle]}>
       <Image
@@ -24,13 +24,13 @@ const SearchBar = (props) => {
         style={styles.textInputStyle}
         onChangeText={props.searchByNameCode}
         onChange={(event) => {
-          const {text} = event.nativeEvent;
+          const { text } = event.nativeEvent;
           setText(text.trim());
         }}
-        placeholderTextColor={props.placeholderTextColor ?? '#A9A9A9'}
+        placeholderTextColor={props.placeholderTextColor ?? "#A9A9A9"}
         placeholder={props.searchBarPlaceHolder}
         keyboardType="default"
-        returnKeyType={'done'}
+        returnKeyType={"done"}
         blurOnSubmit={true}
       />
 
@@ -48,7 +48,7 @@ export default SearchBar;
 
 const styles = StyleSheet.create({
   containerStyle: {
-    justifyContent: 'center',
+    justifyContent: "center",
   },
   textInputStyle: {
     flex: 1,
@@ -58,23 +58,23 @@ const styles = StyleSheet.create({
     marginHorizontal: 15,
     marginVertical: 10,
     padding: 10,
-    flexDirection: 'row',
+    flexDirection: "row",
     height: 45,
-    alignItems: 'center',
+    alignItems: "center",
     shadowOpacity: 1.0,
     shadowRadius: 5,
     shadowOffset: {
       width: 1,
       height: 1,
     },
-    backgroundColor: 'rgba(255,255,255,1)',
-    shadowColor: Platform.OS === 'ios' ? 'rgba(0,0,0,0.3)' : 'rgba(0,0,0,1)',
+    backgroundColor: "rgba(255,255,255,1)",
+    shadowColor: Platform.OS === "ios" ? "rgba(0,0,0,0.3)" : "rgba(0,0,0,1)",
     borderRadius: 10,
     elevation: 5,
   },
   imageStyle: {
     width: 20,
     height: 20,
-    transform: [{scaleX: I18nManager.isRTL ? -1 : 1}],
+    transform: [{ scaleX: I18nManager.isRTL ? -1 : 1 }],
   },
 });

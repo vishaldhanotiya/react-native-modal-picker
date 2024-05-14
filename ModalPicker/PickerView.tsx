@@ -1,5 +1,5 @@
 //import libraries
-import React from 'react';
+import React from "react";
 import {
   View,
   Text,
@@ -9,7 +9,7 @@ import {
   ImageStyle,
   TextStyle,
   ViewStyle,
-} from 'react-native';
+} from "react-native";
 
 interface PickerViewProps {
   pickerContainerStyle?: ViewStyle;
@@ -26,8 +26,8 @@ interface PickerViewProps {
 // create a component
 const PickerView = (props: PickerViewProps) => {
   const downIcon = props.dropDownImage
-    ? props.dropDownImage
-    : require('../res/ic_search.png');
+    ? { uri: props.dropDownImage }
+    : require("../res/ic_drop_down.png");
   return (
     <View>
       <Pressable disabled={props.disable} onPress={() => props.openModal(true)}>
@@ -51,16 +51,16 @@ export default PickerView;
 
 const styles = StyleSheet.create({
   selectedText: {
-    color: '#000',
-    textAlign: 'right',
+    color: "#000",
+    textAlign: "right",
   },
   selectedView: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
   dropDownImage: {
-    width: 10,
-    height: 10,
+    width: 15,
+    height: 15,
     marginHorizontal: 5,
   },
 });
