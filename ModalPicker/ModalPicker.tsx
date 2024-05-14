@@ -11,9 +11,9 @@ import {
   ImageStyle,
   TextStyle,
 } from 'react-native';
-import SearchBar from './ModalPicker/SearchBar';
-import PickerListItem from './ModalPicker/PickerListItem';
-import PickerView from './ModalPicker/PickerView';
+import SearchBar from './SearchBar';
+import PickerListItem from './PickerListItem';
+import PickerView from './PickerView';
 
 const ModalPicker = (props: ModalPickerProps) => {
   const [data, setData] = useState<any[]>(props?.data);
