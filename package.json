@@ -1,6 +1,6 @@
 {
   "name": "rn-modal-picker",
-  "version": "1.3.0",
+  "version": "0.3.1",
   "private": false,
   "description": "This is a cross-platform modal picker with search bar for react native which support both platform IOs and android",
   "main": "index.tsx",

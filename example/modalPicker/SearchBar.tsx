@@ -5,10 +5,19 @@ import {
   Image,
   I18nManager,
   Platform,
+  ViewStyle,
+  ImageSourcePropType,
 } from "react-native";
 import React, { useState } from "react";
-
-const SearchBar = (props) => {
+interface SearchBarProps {
+  searchBarStyle?: ViewStyle;
+  searchByNameCode?: any;
+  searchBarPlaceHolderColor?: string;
+  searchBarPlaceHolder?: string;
+  searchImage?: ImageSourcePropType;
+  closeButtonImage?: ImageSourcePropType;
+}
+const SearchBar = (props: SearchBarProps) => {
   const [text, setText] = useState("");
   const searchIcon = props.searchImage
     ? props.searchImage
@@ -27,7 +36,7 @@ const SearchBar = (props) => {
           const { text } = event.nativeEvent;
           setText(text.trim());
         }}
-        placeholderTextColor={props.placeholderTextColor ?? "#A9A9A9"}
+        placeholderTextColor={props.searchBarPlaceHolderColor ?? "#A9A9A9"}
         placeholder={props.searchBarPlaceHolder}
         keyboardType="default"
         returnKeyType={"done"}

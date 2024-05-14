@@ -17,7 +17,7 @@ interface PickerViewProps {
   dropDownImageStyle?: ImageStyle;
   dropDownImage?: any;
   searchBarPlaceHolder?: string;
-  placeHolderTextColor?: string;
+  placeHolderTextColor?: any;
   placeHolderText?: string;
 
   disable?: boolean;
@@ -27,6 +27,7 @@ interface PickerViewProps {
 }
 // create a component
 const PickerView = (props: PickerViewProps) => {
+  console.log(props.placeHolderTextColor);
   const downIcon = props.dropDownImage
     ? props.dropDownImage
     : require("../res/ic_drop_down.png");
@@ -39,8 +40,13 @@ const PickerView = (props: PickerViewProps) => {
               {props?.value}
             </Text>
           ) : (
-            <Text style={[props.placeHolderTextColor, props.selectedTextStyle]}>
-              {props.value ?? props?.placeHolderText}
+            <Text
+              style={{
+                ...props.selectedTextStyle,
+                color: props.placeHolderTextColor,
+              }}
+            >
+              {props?.placeHolderText}
             </Text>
           )}
 

@@ -11,12 +11,12 @@ import {
   ImageStyle,
   TextStyle,
 } from "react-native";
-import SearchBar from "./modalPicker/SearchBar";
-import PickerListItem from "./modalPicker/PickerListItem";
-import PickerView from "./modalPicker/PickerView";
+import SearchBar from "./SearchBar";
+import PickerListItem from "./PickerListItem";
+import PickerView from "./PickerView";
 
 const ModalPicker = (props: ModalPickerProps) => {
-  const [data, setData] = useState(props?.data);
+  const [data, setData] = useState<any[]>(props?.data);
   const [selectedValue, setSelectedValue] = useState();
   const [isModalVisible, setModalVisible] = useState<boolean>(false);
 
@@ -44,6 +44,10 @@ const ModalPicker = (props: ModalPickerProps) => {
   const openModal = (value: boolean) => {
     setModalVisible(value);
     setData(props?.data);
+  };
+
+  const listItemSeparator = () => {
+    return <View style={[styles.divider, props.itemSeparatorStyle]} />;
   };
 
   return (
@@ -87,6 +91,7 @@ const ModalPicker = (props: ModalPickerProps) => {
               style={styles.flatListStyle}
               keyboardShouldPersistTaps={"handled"}
               showsVerticalScrollIndicator={false}
+              ItemSeparatorComponent={() => listItemSeparator()}
               keyExtractor={(item, index) => index.toString()}
               renderItem={(item) => (
                 <PickerListItem
@@ -112,8 +117,8 @@ export interface ModalPickerProps {
   hideSearchBar?: boolean;
   listTextStyle?: TextStyle;
   searchBarStyle?: ViewStyle;
+  itemSeparatorStyle?: ViewStyle;
   searchBarPlaceHolder?: string;
-  placeHolderText?: string;
   placeholderTextColor?: string;
   dropDownImageStyle?: ImageStyle;
   searchImage?: ImageSourcePropType;
@@ -129,6 +134,12 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     paddingBottom: 30,
     bottom: -30,
+  },
+  divider: {
+    width: "95%",
+    height: 0.8,
+    marginHorizontal: 10,
+    backgroundColor: "#D3D3D3",
   },
   safeAreaView: {
     width: "100%",

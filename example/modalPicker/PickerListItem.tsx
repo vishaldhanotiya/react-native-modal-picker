@@ -22,13 +22,6 @@ const PickerListItem = (props) => {
 export default PickerListItem;
 
 const styles = StyleSheet.create({
-  divider: {
-    width: "95%",
-    height: 0.8,
-    marginHorizontal: 10,
-    backgroundColor: "#D3D3D3",
-  },
-
   listItemView: {
     margin: 10,
     flexDirection: "row",
@@ -36,7 +29,7 @@ const styles = StyleSheet.create({
   },
   itemText: {
     color: "#000",
-    marginLeft: 10,
+    paddingHorizontal: 10,
     textAlign: I18nManager.isRTL ? "right" : "left",
   },
 });
