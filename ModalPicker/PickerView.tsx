@@ -1,4 +1,3 @@
-//import libraries
 import React from "react";
 import {
   View,
@@ -23,9 +22,9 @@ interface PickerViewProps {
   disable?: boolean;
   selectedValue?: Function;
   openModal?: any;
-  value?: any;
+  value?: string;
 }
-// create a component
+
 const PickerView = (props: PickerViewProps) => {
   const downIcon = props.dropDownImage
     ? props.dropDownImage
@@ -39,12 +38,18 @@ const PickerView = (props: PickerViewProps) => {
               {props?.value}
             </Text>
           ) : (
-            <Text style={[props.placeHolderTextColor, props.selectedTextStyle]}>
-              {props.value ?? props?.placeHolderText}
+            <Text
+              style={{
+                ...props.selectedTextStyle,
+                color: props.placeHolderTextColor,
+              }}
+            >
+              {props?.placeHolderText}
             </Text>
           )}
 
           <Image
+            resizeMode="contain"
             source={downIcon}
             style={[styles.dropDownImage, props.dropDownImageStyle]}
           />
@@ -54,7 +59,6 @@ const PickerView = (props: PickerViewProps) => {
   );
 };
 
-//make this component available to the app
 export default PickerView;
 
 const styles = StyleSheet.create({
@@ -67,8 +71,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   dropDownImage: {
-    width: 15,
+    width: 25,
     height: 15,
-    marginHorizontal: 5,
   },
 });

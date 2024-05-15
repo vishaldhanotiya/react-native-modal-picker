@@ -18,7 +18,7 @@ import PickerView from "./modalPicker/PickerView";
 const ModalPicker = (props: ModalPickerProps) => {
   const [data, setData] = useState(props?.data);
   const [selectedValue, setSelectedValue] = useState();
-  const [isModalVisible, setModalVisible] = useState<boolean>(false);
+  const [isModalVisible, setModalVisible] = useState(false);
 
   const searchByNameCode = (searchText: string) => {
     if (/^-{0,1}\d+$/.test(searchText)) {
@@ -44,6 +44,10 @@ const ModalPicker = (props: ModalPickerProps) => {
   const openModal = (value: boolean) => {
     setModalVisible(value);
     setData(props?.data);
+  };
+
+  const listItemSeparator = (style: any) => {
+    return <View style={[styles.divider, style]} />;
   };
 
   return (
@@ -87,6 +91,9 @@ const ModalPicker = (props: ModalPickerProps) => {
               style={styles.flatListStyle}
               keyboardShouldPersistTaps={"handled"}
               showsVerticalScrollIndicator={false}
+              ItemSeparatorComponent={() =>
+                listItemSeparator(props.itemSeparatorStyle)
+              }
               keyExtractor={(item, index) => index.toString()}
               renderItem={(item) => (
                 <PickerListItem
@@ -103,8 +110,8 @@ const ModalPicker = (props: ModalPickerProps) => {
   );
 };
 export default ModalPicker;
-
 export interface ModalPickerProps {
+  data?: any;
   disable?: boolean;
   onChange?: Function;
   pickerTitle?: string;
@@ -112,10 +119,16 @@ export interface ModalPickerProps {
   hideSearchBar?: boolean;
   listTextStyle?: TextStyle;
   searchBarStyle?: ViewStyle;
-  searchBarPlaceHolder?: string;
+  pickerContainerStyle?: ViewStyle;
   placeHolderText?: string;
+  placeHolderTextColor?: string;
+  searchBarPlaceHolderColor?: string;
+  selectedTextStyle?: TextStyle;
+  itemSeparatorStyle?: ViewStyle;
+  searchBarPlaceHolder?: string;
   placeholderTextColor?: string;
   dropDownImageStyle?: ImageStyle;
+  closeButtonImage?: ImageSourcePropType;
   searchImage?: ImageSourcePropType;
   dropDownImage?: ImageSourcePropType;
   animationType?: "none" | "slide" | "fade" | undefined;
@@ -129,6 +142,12 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     paddingBottom: 30,
     bottom: -30,
+  },
+  divider: {
+    width: "95%",
+    height: 0.8,
+    marginHorizontal: 10,
+    backgroundColor: "#D3D3D3",
   },
   safeAreaView: {
     width: "100%",

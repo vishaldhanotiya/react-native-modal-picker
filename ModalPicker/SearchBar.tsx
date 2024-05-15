@@ -5,14 +5,28 @@ import {
   Image,
   I18nManager,
   Platform,
+  ViewStyle,
+  ImageSourcePropType,
 } from "react-native";
 import React, { useState } from "react";
 
-const SearchBar = (props) => {
+interface SearchBarProps {
+  searchBarStyle?: ViewStyle;
+  searchByNameCode?: any;
+  searchBarPlaceHolderColor?: string;
+  searchBarPlaceHolder?: string;
+  searchImage?: ImageSourcePropType;
+  closeButtonImage?: ImageSourcePropType;
+}
+
+const SearchBar = (props: SearchBarProps) => {
   const [text, setText] = useState("");
   const searchIcon = props.searchImage
     ? props.searchImage
     : require("../res/ic_search.png");
+  const clearIcon = props.searchImage
+    ? props.searchImage
+    : require("../res/ic_close.png");
   return (
     <View style={[styles.searchBarStyle, props.searchBarStyle]}>
       <Image
@@ -21,24 +35,24 @@ const SearchBar = (props) => {
         source={searchIcon}
       />
       <TextInput
+        keyboardType="default"
+        returnKeyType={"done"}
+        blurOnSubmit={true}
         style={styles.textInputStyle}
         onChangeText={props.searchByNameCode}
         onChange={(event) => {
           const { text } = event.nativeEvent;
           setText(text.trim());
         }}
-        placeholderTextColor={props.placeholderTextColor ?? "#A9A9A9"}
+        placeholderTextColor={props.searchBarPlaceHolderColor ?? "#A9A9A9"}
         placeholder={props.searchBarPlaceHolder}
-        keyboardType="default"
-        returnKeyType={"done"}
-        blurOnSubmit={true}
       />
 
       {text && (
         <Image
-          resizeMode="center"
+          resizeMode="contain"
           style={styles.imageStyle}
-          source={props.closeButtonImage}
+          source={clearIcon}
         />
       )}
     </View>
@@ -53,6 +67,8 @@ const styles = StyleSheet.create({
   textInputStyle: {
     flex: 1,
     marginLeft: 10,
+    height: 40,
+    outlineStyle: "none",
   },
   searchBarStyle: {
     marginHorizontal: 15,

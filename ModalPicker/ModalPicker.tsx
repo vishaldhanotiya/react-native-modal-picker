@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from "react";
 import {
   FlatList,
   Modal,
@@ -10,13 +10,13 @@ import {
   ImageSourcePropType,
   ImageStyle,
   TextStyle,
-} from 'react-native';
-import SearchBar from './SearchBar';
-import PickerListItem from './PickerListItem';
-import PickerView from './PickerView';
+} from "react-native";
+import SearchBar from "./SearchBar";
+import PickerListItem from "./PickerListItem";
+import PickerView from "./PickerView";
 
 const ModalPicker = (props: ModalPickerProps) => {
-  const [data, setData] = useState<any[]>(props?.data);
+  const [data, setData] = useState(props?.data);
   const [selectedValue, setSelectedValue] = useState();
   const [isModalVisible, setModalVisible] = useState<boolean>(false);
 
@@ -46,6 +46,10 @@ const ModalPicker = (props: ModalPickerProps) => {
     setData(props?.data);
   };
 
+  const listItemSeparator = (style: any) => {
+    return <View style={[styles.divider, style]} />;
+  };
+
   return (
     <View>
       <PickerView
@@ -58,7 +62,8 @@ const ModalPicker = (props: ModalPickerProps) => {
         transparent
         visible={isModalVisible}
         animationType={props.animationType}
-        onRequestClose={() => openModal(false)}>
+        onRequestClose={() => openModal(false)}
+      >
         <SafeAreaView style={styles.safeAreaView}>
           <Pressable
             style={styles.onPressClose}
@@ -70,7 +75,8 @@ const ModalPicker = (props: ModalPickerProps) => {
               onPress={() => {
                 setData(data);
                 setModalVisible(false);
-              }}>
+              }}
+            >
               <View style={styles.backDropStyle} />
             </Pressable>
             {!props.hideSearchBar && (
@@ -83,8 +89,11 @@ const ModalPicker = (props: ModalPickerProps) => {
               overScrollMode="never"
               initialNumToRender={50}
               style={styles.flatListStyle}
-              keyboardShouldPersistTaps={'handled'}
+              keyboardShouldPersistTaps={"handled"}
               showsVerticalScrollIndicator={false}
+              ItemSeparatorComponent={() =>
+                listItemSeparator(props.itemSeparatorStyle)
+              }
               keyExtractor={(item, index) => index.toString()}
               renderItem={(item) => (
                 <PickerListItem
@@ -100,6 +109,7 @@ const ModalPicker = (props: ModalPickerProps) => {
     </View>
   );
 };
+
 export default ModalPicker;
 
 export interface ModalPickerProps {
@@ -110,33 +120,41 @@ export interface ModalPickerProps {
   hideSearchBar?: boolean;
   listTextStyle?: TextStyle;
   searchBarStyle?: ViewStyle;
+  itemSeparatorStyle?: ViewStyle;
   searchBarPlaceHolder?: string;
   placeholderTextColor?: string;
   dropDownImageStyle?: ImageStyle;
   searchImage?: ImageSourcePropType;
   dropDownImage?: ImageSourcePropType;
-  animationType?: 'none' | 'slide' | 'fade' | undefined;
+  animationType?: "none" | "slide" | "fade" | undefined;
 }
+
 const styles = StyleSheet.create({
   container: {
-    width: '100%',
-    height: '80%',
+    width: "100%",
+    height: "80%",
     borderTopRightRadius: 20,
     borderTopLeftRadius: 20,
-    backgroundColor: 'white',
+    backgroundColor: "white",
     paddingBottom: 30,
     bottom: -30,
   },
+  divider: {
+    width: "95%",
+    height: 0.8,
+    marginHorizontal: 10,
+    backgroundColor: "#D3D3D3",
+  },
   safeAreaView: {
-    width: '100%',
-    height: '100%',
-    backgroundColor: 'rgba(0,0,0,0.2)',
+    width: "100%",
+    height: "100%",
+    backgroundColor: "rgba(0,0,0,0.2)",
   },
   onPressClose: {
     flex: 1,
   },
   closePress: {
-    alignItems: 'center',
+    alignItems: "center",
     padding: 10,
   },
   flatListStyle: {
@@ -146,6 +164,6 @@ const styles = StyleSheet.create({
     width: 40,
     height: 3,
     borderRadius: 5,
-    backgroundColor: 'grey',
+    backgroundColor: "grey",
   },
 });
