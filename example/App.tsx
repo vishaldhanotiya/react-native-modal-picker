@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 import { Platform, StyleSheet, Text, View } from "react-native";
-import ModalPicker from "./modalPicker/ModalPicker";
-//import ModalPicker from "rn-modal-picker";
+// import ModalPicker from "./modalPicker/ModalPicker";
+import ModalPicker from "rn-modal-picker";
 
 const dataSource = [
   {
@@ -96,7 +96,7 @@ const dataSource = [
   },
 ];
 const App = () => {
-  const [value, setValue] = useState<string>("");
+  const [value, setValue] = useState("");
 
   return (
     <View style={styles.container}>
@@ -106,16 +106,16 @@ const App = () => {
         data={dataSource}
         animationType={"slide"}
         pickerContainerStyle={styles.pickerStyle}
-        // dropDownImage={require("../res/ic_drop_down.png")}
+        dropDownImage={require("./res/ic_drop_down.png")}
         selectedTextStyle={styles.selectedTextStyle}
         listTextStyle={styles.listTextStyle}
-        placeHolderText={"Vishal"}
+        placeHolderText={"Please select country"}
         searchBarPlaceHolder={"Search......"}
         searchBarPlaceHolderColor={"grey"}
         // hideSearchBar
-        placeHolderTextColor={"grey"}
+        placeHolderTextColor={"black"}
         searchBarStyle={styles.searchBarStyle}
-        // searchImage={require('./res/ic_search.png')}
+        closeButtonImage={require("./res/ic_close.png")}
         value={value}
         onChange={(value) => {
           setValue(value);
@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     borderColor: "#303030",
     alignItems: "center",
-
+    alignSelf: "center",
     padding: 10,
     backgroundColor: "white",
     borderRadius: 5,
