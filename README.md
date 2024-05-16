@@ -12,7 +12,7 @@
   <h2 align="center">This is a cross-platform picker with search bar for react native which supports iOS, Android and Web</h2>
 </p>
 
-| iOS                                                                                               | Android                                                                                           | Web                                                                                               |
+| Android                                                                                               | iOS                                                                                           | Web                                                                                               |
 | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
 | <img  src="https://github.com/vishaldhanotiya/react-native-modal-picker/assets/34983293/b0b9a0ca-9ce1-4d4d-8499-ea5dd794dcda" width="200" height="400"/> | <img  src="https://github.com/vishaldhanotiya/react-native-modal-picker/assets/34983293/f31a6300-ba4e-4032-a7f1-5241bf9871eb" width="200" height="400"/> | <img  src="https://github.com/vishaldhanotiya/react-native-modal-picker/assets/34983293/92233391-c825-4773-a878-3fbeab17079d" width="400" height="250"/> |
 
