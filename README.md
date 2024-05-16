@@ -79,56 +79,7 @@ const dataSource = [
   {
     id: 10,
     name: "Japan",
-  },
-  {
-    id: 11,
-    name: "Kenya",
-  },
-  {
-    id: 12,
-    name: "Liberia",
-  },
-  {
-    id: 13,
-    name: "Malaysia",
-  },
-  {
-    id: 14,
-    name: "Nepal",
-  },
-  {
-    id: 15,
-    name: "Oman",
-  },
-  {
-    id: 16,
-    name: "Poland",
-  },
-  {
-    id: 17,
-    name: "Qatar",
-  },
-
-  {
-    id: 18,
-    name: "Reunion",
-  },
-  {
-    id: 19,
-    name: "Saint Helena",
-  },
-  {
-    id: 20,
-    name: "United States",
-  },
-  {
-    id: 21,
-    name: "Virgin Islands",
-  },
-  {
-    id: 22,
-    name: "Zimbabwe",
-  },
+  }
 ];
 const App = () => {
   const [value, setValue] = useState("");
