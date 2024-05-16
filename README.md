@@ -38,10 +38,6 @@
 
 > **npm i rn-modal-picker**
 
-#### Step 2 Link
-
-> **react-native link rn-modal-picker**
-
 ## Usage
 
 ```jsx

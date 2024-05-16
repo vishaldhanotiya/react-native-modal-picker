@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
   },
   pickerStyle: {
     height: 50,
-    width: "100%",
+    width: "90%",
     marginVertical: 10,
     borderColor: "#303030",
     alignItems: "center",
