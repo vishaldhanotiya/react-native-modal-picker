@@ -9,24 +9,20 @@
 </p>  
 
 <p align="center">
-  <h2 align="center">This is a cross-platform picker with search bar for react native which support iOS, Android and Web</h2>
+  <h2 align="center">This is a cross-platform picker with search bar for react native which supports iOS, Android and Web</h2>
 </p>
 
 <p align="left">
-  <img  width="250" height="400" src="https://firebasestorage.googleapis.com/v0/b/vishaldhanotiya-1168.appspot.com/o/picker-without-search.gif?alt=media&token=f0cebd71-8bd0-4027-87e7-0ade4fff5071">
+  <img  width="250" height="400" src="https://github.com/vishaldhanotiya/react-native-modal-picker/assets/34983293/58b8f0c4-4958-4a71-8cf4-c9834b7aaec2">
   
   <img  width="400" height="300" src="https://github.com/vishaldhanotiya/react-native-modal-picker/assets/34983293/92233391-c825-4773-a878-3fbeab17079d">
- 
-<img  width="250" height="400" src="https://firebasestorage.googleapis.com/v0/b/vishaldhanotiya-1168.appspot.com/o/picker-with-search-bar.gif?alt=media&token=848b110f-a004-4f10-bd46-7a612ff4cac7">
-  
-
   
 </p>
 
 ## Features
 
 1. Easy to use.
-2. Cross platform compatibility Android, iOS and Web.
+2. Cross-platform compatibility Android, iOS and Web.
 3. Hide and show search bar.
 4. Dynamically change dropdown and search image.
 5. Customize font size, font color and picker style.
