@@ -15,17 +15,17 @@ interface SearchBarProps {
   searchByNameCode?: any;
   searchBarPlaceHolderColor?: string;
   searchBarPlaceHolder?: string;
-  searchImage?: ImageSourcePropType;
-  closeButtonImage?: ImageSourcePropType;
+  searchIcon?: ImageSourcePropType;
+  searchClearIcon?: ImageSourcePropType;
 }
 
 const SearchBar = (props: SearchBarProps) => {
   const [text, setText] = useState("");
-  const searchIcon = props.searchImage
-    ? props.searchImage
+  const searchIcon = props.searchIcon
+    ? props.searchIcon
     : require("../res/ic_search.png");
-  const clearIcon = props.searchImage
-    ? props.searchImage
+  const clearIcon = props.searchClearIcon
+    ? props.searchClearIcon
     : require("../res/ic_close.png");
   return (
     <View style={[styles.searchBarStyle, props.searchBarStyle]}>

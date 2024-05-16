@@ -5394,9 +5394,9 @@ rimraf@~2.6.2:
   dependencies:
     glob "^7.1.3"
 
-rn-modal-picker@../rn-modal-picker-0.4.4.tgz:
-  version "0.4.4"
-  resolved "../rn-modal-picker-0.4.4.tgz#6deea830b39e677ec50612d802a11353cee3ed96"
+rn-modal-picker@../rn-modal-picker-0.4.5.tgz:
+  version "0.4.5"
+  resolved "../rn-modal-picker-0.4.5.tgz#e5faf6bc8719ccd925a835c67ea1ef2447f47a6c"
 
 run-parallel@^1.1.9:
   version "1.2.0"

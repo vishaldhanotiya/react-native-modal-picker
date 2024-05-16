@@ -9,7 +9,7 @@
 </p>  
 
 <p align="center">
-  <h2 align="center">This is a cross-platform picker with search bar for react native support both platform IOs and android</h2>
+  <h2 align="center">This is a cross-platform picker with search bar for react native which support iOS, Android and Web</h2>
 </p>
 
 <p align="left">
@@ -22,11 +22,11 @@
 
 ## Features
 
-1. Easy to use
-2. Cross platform compatibility android and ios both
-3. According to use hide and show search bar and title
-4. Dynamically change dropdown image
-5. Customize font size, font color and style
+1. Easy to use.
+2. Cross platform compatibility Android, iOS and Web.
+3. Hide and show search bar.
+4. Dynamically change dropdown and search image.
+5. Customize font size, font color and picker style.
 6. Change animation(Slide, fade, none)
 
 ## Installation
@@ -42,231 +42,186 @@
 ## Usage
 
 ```jsx
-import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-// import RNPickerDialog from './picker/new';
-import RNPickerDialog from 'rn-modal-picker';
+import React, { useState } from "react";
+import { Platform, StyleSheet, Text, View } from "react-native";
+import ModalPicker from "rn-modal-picker";
 
-export default class HomeScreen extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: [
-        {
-          id: 1,
-          name: 'Afghanistan',
-        },
-        {
-          id: 2,
-          name: 'Bahrain',
-        },
-        {
-          id: 3,
-          name: 'Canada',
-        },
-        {
-          id: 4,
-          name: 'Denmark',
-        },
-        {
-          id: 5,
-          name: 'Egypt',
-        },
-        {
-          id: 6,
-          name: 'France',
-        },
-        {
-          id: 7,
-          name: 'Greece',
-        },
-        {
-          id: 8,
-          name: 'Hong Kong',
-        },
-        {
-          id: 9,
-          name: 'India',
-        },
-        {
-          id: 10,
-          name: 'Japan',
-        },
-        {
-          id: 11,
-          name: 'Kenya',
-        },
-        {
-          id: 12,
-          name: 'Liberia',
-        },
-        {
-          id: 13,
-          name: 'Malaysia',
-        },
-        {
-          id: 14,
-          name: 'Nepal',
-        },
-        {
-          id: 15,
-          name: 'Oman',
-        },
-      ],
-      placeHolderText: 'Please Select Country',
-      selectedText: '',
-      defaultValue: true,
-      select: '',
-      value: '',
-    };
-  }
+const dataSource = [
+  {
+    id: 1,
+    name: "Afghanistan",
+  },
+  {
+    id: 2,
+    name: "Bahrain",
+  },
+  {
+    id: 3,
+    name: "Canada",
+  },
+  {
+    id: 4,
+    name: "Denmark",
+  },
+  {
+    id: 5,
+    name: "Egypt",
+  },
+  {
+    id: 6,
+    name: "France",
+  },
+  {
+    id: 7,
+    name: "Greece",
+  },
+  {
+    id: 8,
+    name: "Hong Kong",
+  },
+  {
+    id: 9,
+    name: "India",
+  },
+  {
+    id: 10,
+    name: "Japan",
+  },
+  {
+    id: 11,
+    name: "Kenya",
+  },
+  {
+    id: 12,
+    name: "Liberia",
+  },
+  {
+    id: 13,
+    name: "Malaysia",
+  },
+  {
+    id: 14,
+    name: "Nepal",
+  },
+  {
+    id: 15,
+    name: "Oman",
+  },
+  {
+    id: 16,
+    name: "Poland",
+  },
+  {
+    id: 17,
+    name: "Qatar",
+  },
 
-  selectedValue(index, item) {
-    this.setState({selectedText: item.name});
-  }
+  {
+    id: 18,
+    name: "Reunion",
+  },
+  {
+    id: 19,
+    name: "Saint Helena",
+  },
+  {
+    id: 20,
+    name: "United States",
+  },
+  {
+    id: 21,
+    name: "Virgin Islands",
+  },
+  {
+    id: 22,
+    name: "Zimbabwe",
+  },
+];
+const App = () => {
+  const [value, setValue] = useState("");
 
-  render() {
-    return (
-      <View style={Styles.container}>
-        <Text style={{marginBottom: 50, fontSize: 25, fontWeight: 'bold'}}>
-          {'React Native Picker With Search'}
-        </Text>
-        <RNPickerDialog
-          data={this.state.data}
-          pickerTitle={'Sort by'}
-          // labelText={'testss'}
-          showSearchBar={true}
-          showPickerTitle={true}
-          listTextStyle={Styles.listTextStyle}
-          pickerStyle={Styles.pickerStyle}
-          selectedText={this.state.selectedText}
-          placeHolderText={this.state.placeHolderText}
-          searchBarPlaceHolder={'Search.....'}
-          searchBarPlaceHolderColor={'#9d9d9d'}
-          selectedTextStyle={Styles.selectedTextStyle}
-          placeHolderTextColor={'gray'}
-          dropDownIconStyle={Styles.dropDownIconStyle}
-          searchBarStyle={Styles.searchBarStyle}
-          //dropDownIcon={require('../assets/pin.png')}
-          selectedValue={(index, item) => this.selectedValue(index, item)}
-        />
+  return (
+    <View style={styles.container}>
+      <Text style={styles.titleText}>React Native Modal Picker</Text>
 
-        <RNPickerDialog
-          data={this.state.data}
-          pickerTitle={'Sort by'}
-          labelText={'Country'}
-          showSearchBar={true}
-          showPickerTitle={true}
-          listTextStyle={Styles.listTextStyle}
-          pickerStyle={Styles.pickerStyle1}
-          selectedText={this.state.selectedText}
-          // placeHolderText={this.state.placeHolderText}
-          searchBarPlaceHolder={'Search.....'}
-          searchBarPlaceHolderColor={'#9d9d9d'}
-          selectedTextStyle={Styles.selectedTextStyle1}
-          placeHolderTextColor={'black'}
-          dropDownIconStyle={Styles.dropDownIconStyle1}
-          searchBarStyle={Styles.searchBarStyle}
-          //dropDownIcon={require('../assets/pin.png')}
-          selectedValue={(index, item) => this.selectedValue(index, item)}
-        />
-      </View>
-    );
-  }
-}
+      <ModalPicker
+        value={value}
+        data={dataSource}
+        animationType={"slide"}
+        pickerContainerStyle={styles.pickerStyle}
+        dropDownIcon={require("./res/ic_drop_down.png")}
+        selectedTextStyle={styles.selectedTextStyle}
+        listTextStyle={styles.listTextStyle}
+        placeHolderText={"Please select country"}
+        searchBarPlaceHolder={"Search......"}
+        searchBarPlaceHolderColor={"grey"}
+        placeHolderTextColor={"black"}
+        searchBarStyle={styles.searchBarStyle}
+        searchClearIcon={require("./res/ic_close.png")}
+        onChange={(value) => {
+          setValue(value);
+        }}
+      />
+    </View>
+  );
+};
+export default App;
 
-const Styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#F5FCFF",
+  },
+  titleText: {
+    color: "#000",
+    fontSize: 25,
+    marginBottom: 25,
+    fontWeight: "bold",
+  },
+  pickerStyle: {
+    height: 50,
+    width: "100%",
+    marginVertical: 10,
+    borderColor: "#303030",
+    alignItems: "center",
+    alignSelf: "center",
+    padding: 10,
+    backgroundColor: "white",
+    borderRadius: 5,
+    borderWidth: 1.5,
+    fontSize: 16,
+    color: "#000",
   },
   selectedTextStyle: {
-    height: 50,
-    borderColor: 'gray',
-    backgroundColor: 'transparent',
-    justifyContent: 'center',
-    width: '100%',
-    color: 'black',
-    fontSize: 20,
-    paddingLeft: 10,
-    marginTop: -2,
-  },
-  selectedTextStyle1: {
-    height: 50,
-    borderColor: 'gray',
-    backgroundColor: 'transparent',
-    justifyContent: 'center',
-    width: '100%',
-    color: 'black',
-    fontSize: 20,
-    paddingLeft: 10,
-    marginTop: 15,
+    paddingLeft: 5,
+    color: "#000",
+    textAlign: "right",
   },
   listTextStyle: {
-    color: '#000',
-    marginVertical: 10,
-    flex: 0.9,
-    marginLeft: 20,
-    marginHorizontal: 10,
-    textAlign: 'left',
+    color: "#000",
+    textAlign: "right",
   },
+
   searchBarStyle: {
-    marginBottom: 10,
-    flexDirection: 'row',
-    height: 40,
-    shadowRadius: 1,
+    margin: 10,
+    padding: 10,
+    flexDirection: "row",
+    height: 45,
     shadowOpacity: 1.0,
-    borderWidth: 1,
+    shadowRadius: 2,
     shadowOffset: {
       width: 1,
       height: 1,
     },
-    borderColor: '#303030',
-    shadowColor: '#303030',
-    borderRadius: 5,
-    elevation: 1,
-    marginHorizontal: 10,
-  },
-  placeHolderTextStyle: {
-    color: 'red',
-    padding: 10,
-    textAlign: 'left',
-    width: '99%',
-    flexDirection: 'row',
-  },
-  dropDownIconStyle: {
-    width: 10,
-    height: 10,
-    left: -40,
-    // marginTop: 20,
-  },
-  dropDownIconStyle1: {
-    width: 10,
-    height: 10,
-    left: -40,
-    marginTop: 15,
-  },
-  pickerStyle: {
-    shadowRadius: 0.5,
-    shadowOpacity: 0.5,
-    borderWidth: 0.5,
-    shadowOffset: {
-      width: 0.5,
-      height: 0.5,
-    },
-    height: 60,
-    borderColor: '#303030',
-    shadowColor: '#303030',
-    borderRadius: 2,
-    elevation: 0.5,
-  },
-  pickerStyle1: {
-    height: 60,
-    borderBottomColor: 'dodgerblue',
-    borderBottomWidth: 2,
+    backgroundColor: "rgba(255,255,255,1)",
+    shadowColor: Platform.OS === "ios" ? "rgba(0,0,0,0.3)" : "rgba(0,0,0,1)",
+    borderRadius: 10,
+    elevation: 5,
   },
 });
+
 ```
 
 ## Properties
@@ -274,22 +229,21 @@ const Styles = StyleSheet.create({
 | Prop                      | Default | Type                     | Description                                                    | Required/Optional |
 | ------------------------- | ------- | ------------------------ | -------------------------------------------------------------- | ----------------- |
 | data                      | []      | array                    | Array of objects with a unique id and name                     | Required          |
-| labelText                 | -       | string                   | Show label in material input box                               | Required          |
-| pickerTitle               | -       | string                   | Use to show title on picker                                    | Optional          |
-| showSearchBar             | false   | bool                     | Show and hide search bar                                       | Optional          |
-| showPickerTitle           | false   | bool                     | Show and hide picker title                                     | Optional          |
-| selectedText              | -       | string                   | Set selected value otherwise its blank $ use for default value | Optional          |
+| hideSearchBar             | false   | bool                     | Show and hide search bar                                       | Optional          |
+| value                     | -       | string                   | Set selected value otherwise its blank $ use for default value | Optional          |
 | placeHolderText           | -       | string                   | Use to Show place holder hint text                             | Required          |
-| pickerStyle               | -       | object                   | Customize picker style                                         | Required          |
+| pickerContainerStyle      | -       | object                   | Customize picker style                                         | Required          |
 | listTextStyle             | -       | object                   | Customize list item text style                                 | Optional          |
 | placeHolderTextColor      | -       | object                   | Customize placeholder text color                               | Optional          |
 | itemSeparatorStyle        | -       | object                   | Style for Horizontal Line between item                         | Optional          |
 | selectedTextStyle         | -       | object                   | Customize selected text style                                  | Optional          |
 | searchBarStyle            | -       | object                   | Customize Search bar Container style                           | Optional          |
-| dropDownIconStyle         | -       | object                   | Customize drop down style                                      | Optional          |
-| dropDownIcon              | -       | png/jpg                  | Add custom drop down image                                     | Optional          |
-| selectedValue             | -       | function                 | callback function received value from list selection           | Required          |
-| changeAnimation           | -       | string [slide,none,fade] | Change Modal Animation                                         | Optional          |
-| disablePicker             | -       | bool                     | Disable picker if you show default value and no need to change | Optional          |
+| onChange                  | -       | function                 | callback function received value from list selection           | Required          |
+| animationType             | -       | string [slide,none,fade] | Change Modal Animation                                         | Optional          |
+| disable                   | -       | bool                     | Disable picker if you show default value and no need to change | Optional          |
 | searchBarPlaceHolder      | -       | string                   | Search bar place holder text                                   | Optional          |
 | searchBarPlaceHolderColor | -       | color code               | Add color code                                                 | Optional          |
+| dropDownIconStyle         | -       | object                   | Change drop down icon style color                              | Optional          |
+| searchClearIcon           | -       | png/jpg                  | Change search bar text clear icon style                        | Optional          |
+| searchIcon                | -       | png/jpg                  | Change search bar icon style color                             | Optional          |
+| dropDownIcon              | -       | png/jpg                  | Change picker drop down icon                                   | Optional          |

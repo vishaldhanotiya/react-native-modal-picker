@@ -114,7 +114,6 @@ export interface ModalPickerProps {
   data?: any;
   disable?: boolean;
   onChange?: Function;
-  pickerTitle?: string;
   value?: string | any;
   hideSearchBar?: boolean;
   listTextStyle?: TextStyle;
@@ -126,11 +125,10 @@ export interface ModalPickerProps {
   selectedTextStyle?: TextStyle;
   itemSeparatorStyle?: ViewStyle;
   searchBarPlaceHolder?: string;
-  placeholderTextColor?: string;
-  dropDownImageStyle?: ImageStyle;
-  closeButtonImage?: ImageSourcePropType;
-  searchImage?: ImageSourcePropType;
-  dropDownImage?: ImageSourcePropType;
+  dropDownIconStyle?: ImageStyle;
+  searchClearIcon?: ImageSourcePropType;
+  searchIcon?: ImageSourcePropType;
+  dropDownIcon?: ImageSourcePropType;
   animationType?: "none" | "slide" | "fade" | undefined;
 }
 const styles = StyleSheet.create({

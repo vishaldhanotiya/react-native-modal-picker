@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-
 import { Platform, StyleSheet, Text, View } from "react-native";
-// import ModalPicker from "./modalPicker/ModalPicker";
 import ModalPicker from "rn-modal-picker";
 
 const dataSource = [
@@ -103,20 +101,19 @@ const App = () => {
       <Text style={styles.titleText}>React Native Modal Picker</Text>
 
       <ModalPicker
+        value={value}
         data={dataSource}
         animationType={"slide"}
         pickerContainerStyle={styles.pickerStyle}
-        dropDownImage={require("./res/ic_drop_down.png")}
+        dropDownIcon={require("./res/ic_drop_down.png")}
         selectedTextStyle={styles.selectedTextStyle}
         listTextStyle={styles.listTextStyle}
         placeHolderText={"Please select country"}
         searchBarPlaceHolder={"Search......"}
         searchBarPlaceHolderColor={"grey"}
-        // hideSearchBar
         placeHolderTextColor={"black"}
         searchBarStyle={styles.searchBarStyle}
-        closeButtonImage={require("./res/ic_close.png")}
-        value={value}
+        searchClearIcon={require("./res/ic_close.png")}
         onChange={(value) => {
           setValue(value);
         }}

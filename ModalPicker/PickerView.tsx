@@ -13,8 +13,8 @@ import {
 interface PickerViewProps {
   pickerContainerStyle?: ViewStyle;
   selectedTextStyle?: TextStyle;
-  dropDownImageStyle?: ImageStyle;
-  dropDownImage?: any;
+  dropDownIconStyle?: ImageStyle;
+  dropDownIcon?: any;
   searchBarPlaceHolder?: string;
   placeHolderTextColor?: string;
   placeHolderText?: string;
@@ -26,8 +26,8 @@ interface PickerViewProps {
 }
 
 const PickerView = (props: PickerViewProps) => {
-  const downIcon = props.dropDownImage
-    ? props.dropDownImage
+  const downIcon = props.dropDownIcon
+    ? props.dropDownIcon
     : require("../res/ic_drop_down.png");
   return (
     <View>
@@ -51,7 +51,7 @@ const PickerView = (props: PickerViewProps) => {
           <Image
             resizeMode="contain"
             source={downIcon}
-            style={[styles.dropDownImage, props.dropDownImageStyle]}
+            style={[styles.dropDownImage, props.dropDownIconStyle]}
           />
         </View>
       </Pressable>
