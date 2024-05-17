@@ -5394,9 +5394,10 @@ rimraf@~2.6.2:
   dependencies:
     glob "^7.1.3"
 
-rn-modal-picker@../rn-modal-picker-0.4.5.tgz:
+rn-modal-picker@0.4.5:
   version "0.4.5"
-  resolved "../rn-modal-picker-0.4.5.tgz#e5faf6bc8719ccd925a835c67ea1ef2447f47a6c"
+  resolved "https://registry.yarnpkg.com/rn-modal-picker/-/rn-modal-picker-0.4.5.tgz#39b55881d38fea528f58f24d9b53c6b8d5c71812"
+  integrity sha512-UN03wJFLsnQZg4bmn1m6VINyfUfTd1HyQZFa2kzGIlVWb3YXnvOc0oxt2MtRTGMXHiJDScmTYD0ovSjaYt5fpw==
 
 run-parallel@^1.1.9:
   version "1.2.0"

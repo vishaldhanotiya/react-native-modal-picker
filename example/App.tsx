@@ -177,3 +177,5 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
 });
+
+// "rn-modal-picker": "../rn-modal-picker-0.4.5.tgz"
