@@ -35,8 +35,8 @@ const SearchBar = (props: SearchBarProps) => {
         source={searchIcon}
       />
       <TextInput
-        keyboardType="default"
-        returnKeyType={"done"}
+        inputMode="default"
+        enterKeyHint={"done"}
         blurOnSubmit={true}
         style={styles.textInputStyle}
         onChangeText={props.searchByNameCode}
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     flex: 1,
     marginLeft: 10,
     height: 40,
-    outlineStyle: "none",
+    ...Platform.select({ web: { outlineStyle: "none" } }),
   },
   searchBarStyle: {
     marginHorizontal: 15,
