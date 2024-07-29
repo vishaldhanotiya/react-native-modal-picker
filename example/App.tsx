@@ -115,7 +115,7 @@ const App = () => {
         searchBarStyle={styles.searchBarStyle}
         searchClearIcon={require("./res/ic_close.png")}
         onChange={(value) => {
-          setValue(value);
+          setValue(value.name);
         }}
       />
     </View>

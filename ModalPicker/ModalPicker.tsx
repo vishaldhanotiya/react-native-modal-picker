@@ -38,7 +38,7 @@ const ModalPicker = (props: ModalPickerProps) => {
   const handleItemOnClick = (item) => {
     setModalVisible(false);
     setSelectedValue(item.name);
-    props.onChange && props.onChange(item.name);
+    props.onChange && props.onChange(item);
   };
 
   const openModal = (value: boolean) => {
